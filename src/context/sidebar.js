@@ -10,4 +10,4 @@ function useSidebar() {
 
   return { openSidebar, handleSidebarOpen, handleSidebarClose };
 }
-export const SidebarContext = createContainer(useSidebar);
+export default SidebarContext = createContainer(useSidebar);

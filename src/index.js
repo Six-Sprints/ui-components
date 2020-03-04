@@ -11,6 +11,7 @@ import ChatListItem from "./components/ui/chat/chat-list-item";
 import Copyright from "./components/ui/other/copyright";
 import NmBox from "./components/ui/other/nm-box";
 import TextItem from "./components/ui/other/text-item";
+import SidebarContext from "./context/sidebar";
 
 export {
   LoginForm,
@@ -25,5 +26,6 @@ export {
   ChatListItem,
   Copyright,
   NmBox,
-  TextItem
+  TextItem,
+  SidebarContext
 };
