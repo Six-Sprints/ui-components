@@ -24,7 +24,7 @@ const CustomTimePicker = asField(({ fieldState, fieldApi, ...props }) => {
 
   return (
     <MuiPickersUtilsProvider utils={MomentUtils}>
-      <>
+      <div>
         <TimePicker
           autoOk
           label={label}
@@ -36,7 +36,7 @@ const CustomTimePicker = asField(({ fieldState, fieldApi, ...props }) => {
           }}
         />
         {touched && error && <FormHelperText>{error}</FormHelperText>}
-      </>
+      </div>
     </MuiPickersUtilsProvider>
   );
 });

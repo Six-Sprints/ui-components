@@ -18,11 +18,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-
-    backgroundColor: "#f5f5f5",
-    padding: "34px 55px",
-    borderRadius: "20px"
+    alignItems: "center"
   },
   input: {
     marginTop: "2rem"
@@ -36,15 +32,23 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const LoginForm = ({ handleSubmit, getFormApi, loading, bgImage, path }) => {
+const LoginForm = ({
+  handleSubmit,
+  getFormApi,
+  loading,
+  bgImageClass,
+  loginClass,
+  registerPath,
+  registerText
+}) => {
   const classes = useStyles();
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={8} className={bgImage} />
+      <Grid item xs={false} sm={4} md={8} className={bgImageClass} />
       <Grid item xs={12} sm={8} md={4} component={Paper}>
         {loading && <LinearProgress />}
-        <div className={classes.paper}>
+        <div className={classes.paper || loginClass}>
           <Typography component="h1" variant="h5">
             Login
           </Typography>
@@ -81,9 +85,13 @@ const LoginForm = ({ handleSubmit, getFormApi, loading, bgImage, path }) => {
               Login
             </Button>
 
-            <Typography component={Link} to={path}>
-              <p className={classes.link}>New user ? Register Now.</p>
-            </Typography>
+            {registerPath && (
+              <Typography component={Link} to={registerPath}>
+                <p className={classes.link}>
+                  {registerText || "New user ? Register Now."}
+                </p>
+              </Typography>
+            )}
           </Form>
         </div>
       </Grid>

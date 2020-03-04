@@ -24,7 +24,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
 
   return (
     <MuiPickersUtilsProvider utils={MomentUtils}>
-      <>
+      <div>
         <DatePicker
           {...rest}
           disableFuture
@@ -39,7 +39,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
           }}
         />
         {touched && error && <FormHelperText>{error}</FormHelperText>}
-      </>
+      </div>
     </MuiPickersUtilsProvider>
   );
 });

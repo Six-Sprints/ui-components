@@ -5,6 +5,8 @@ import SearchInput from "./components/form/search-input";
 import TextInput from "./components/form/text-input";
 import TimePicker from "./components/form/time-picker";
 import TextAreaInput from "./components/form/textarea-input";
+import ChatBubble from "./components/ui/chat/chat-bubble";
+import ChatListItem from "./components/ui/chat/chat-list-item";
 
 export {
   LoginForm,
@@ -13,5 +15,7 @@ export {
   SearchInput,
   TextInput,
   TimePicker,
-  TextAreaInput
+  TextAreaInput,
+  ChatBubble,
+  ChatListItem
 };
