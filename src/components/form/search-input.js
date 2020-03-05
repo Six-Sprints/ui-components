@@ -1,6 +1,6 @@
 import React from "react";
 import { asField, Form, Text } from "informed";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Button, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
 const SearchInput = asField(({ ...props }) => {
@@ -9,7 +9,9 @@ const SearchInput = asField(({ ...props }) => {
     className,
     containerClassName,
     onSearchSubmit,
-    iconAlignLeft
+    icon,
+    button,
+    handleSearch
   } = props;
 
   let formApi;
@@ -25,24 +27,33 @@ const SearchInput = asField(({ ...props }) => {
     formApi.reset();
   };
   return (
-    <Form getApi={getFormApi} onSubmit={handleSubmit}>
-      <div className={containerClassName}>
-        {iconAlignLeft && (
-          <IconButton type="submit" aria-label="search">
-            <SearchIcon />
-          </IconButton>
-        )}
+    <Form
+      getApi={getFormApi}
+      className={containerClassName}
+      onSubmit={handleSubmit}
+    >
+      <Box display="flex" justifyContent="space-between">
         <Text
           placeholder={placeholder || "Search..."}
           field="search"
           className={className}
         />
-        {!iconAlignLeft && (
+        {icon && (
           <IconButton type="submit" aria-label="search" color="primary">
             <SearchIcon />
           </IconButton>
         )}
-      </div>
+        {button && (
+          <Button
+            onClick={handleSearch}
+            variant="contained"
+            color="primary"
+            disableElevation
+          >
+            Search
+          </Button>
+        )}
+      </Box>
     </Form>
   );
 });
