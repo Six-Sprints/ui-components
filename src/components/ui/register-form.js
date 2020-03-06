@@ -25,9 +25,10 @@ const RegisterForm = ({
   loading,
   bgImageClass,
   registerClass,
-  isBtnFullWidth,
+  btnFullWidth,
   heading,
-  btnText
+  btnText,
+  children
 }) => {
   const classes = useStyles();
   return (
@@ -84,19 +85,16 @@ const RegisterForm = ({
               validateOnBlur
               validateOnChange
             />
+            {children}
 
             <Button
-              fullWidth={isBtnFullWidth}
+              fullWidth={btnFullWidth}
               type="submit"
               variant="contained"
               color="primary"
             >
-              {btnText}
+              {btnText || "Register"}
             </Button>
-
-            <Typography component={Link} to={"/login"}>
-              <p>Already have an account ? Login Now.</p>
-            </Typography>
           </Form>
         </div>
       </Grid>

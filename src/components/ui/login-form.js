@@ -39,7 +39,9 @@ const LoginForm = ({
   bgImageClass,
   loginClass,
   registerPath,
-  registerText
+  registerText,
+  btnText,
+  email
 }) => {
   const classes = useStyles();
   return (
@@ -54,15 +56,27 @@ const LoginForm = ({
           </Typography>
 
           <Form getApi={getFormApi} onSubmit={handleSubmit}>
-            <TextInput
-              containerClassName={classes.input}
-              required
-              field="mobileNumber"
-              type="tel"
-              label="Mobile Number"
-              validateOnBlur
-              validateOnChange
-            />
+            {email ? (
+              <TextInput
+                containerClassName={classes.input}
+                required
+                field="email"
+                type="email"
+                label="Email"
+                validateOnBlur
+                validateOnChange
+              />
+            ) : (
+              <TextInput
+                containerClassName={classes.input}
+                required
+                field="mobileNumber"
+                type="tel"
+                label="Mobile Number"
+                validateOnBlur
+                validateOnChange
+              />
+            )}
 
             <TextInput
               containerClassName={classes.input}
@@ -82,7 +96,7 @@ const LoginForm = ({
               variant="contained"
               color="primary"
             >
-              Login
+              {btnText || "Login"}
             </Button>
 
             {registerPath && (
