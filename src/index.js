@@ -8,7 +8,7 @@ import SelectInput from "./components/form/select-input";
 import TimePicker from "./components/form/time-picker";
 import TextAreaInput from "./components/form/textarea-input";
 import ChatBubble from "./components/ui/chat/chat-bubble";
-import ChatListItem from "./components/ui/chat/chat-list-item";
+import ListItem from "./components/ui/chat/list-item";
 import Copyright from "./components/ui/other/copyright";
 import NmBox from "./components/ui/other/nm-box";
 import SidebarContext from "./context/sidebar";
@@ -24,7 +24,7 @@ export {
   TimePicker,
   TextAreaInput,
   ChatBubble,
-  ChatListItem,
+  ListItem,
   Copyright,
   NmBox,
   SidebarContext

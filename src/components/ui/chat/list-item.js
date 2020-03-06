@@ -8,9 +8,6 @@ import {
 } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  roundBorder: {
-    borderRadius: 14
-  },
   ellipsis: {
     whiteSpace: "nowrap",
     overflow: "hidden",
@@ -18,15 +15,24 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ChatItem = ({ handleClick, name, text, time }) => {
+const ListItem = ({
+  handleClick,
+  image,
+  name,
+  text,
+  time,
+  itemStyle,
+  timeStyle
+}) => {
   const classes = useStyles();
   return (
-    <CardActionArea onClick={handleClick} className={classes.roundBorder}>
-      <Box my={2} mx={1} display="flex">
-        <Box width={"15%"}>
-          <Avatar>{name.charAt(0)}</Avatar>
-        </Box>
-        <Box width={"68%"} mx={1}>
+    <CardActionArea onClick={handleClick} className={itemStyle}>
+      <Box my={2} mx={1} display="flex" alignItems="center">
+        <Avatar alt="avatar-image" src={image}>
+          {name.charAt(0)}
+        </Avatar>
+
+        <Box width={"68%"} mx={2}>
           <Typography className={classes.ellipsis} variant="h6">
             {name}
           </Typography>
@@ -34,7 +40,8 @@ const ChatItem = ({ handleClick, name, text, time }) => {
             {text}
           </Typography>
         </Box>
-        <Box width={"15%"}>
+
+        <Box className={timeStyle} mb={3} width={"15%"}>
           <Typography variant="caption">{time}</Typography>
         </Box>
       </Box>
@@ -42,4 +49,4 @@ const ChatItem = ({ handleClick, name, text, time }) => {
   );
 };
 
-export default ChatItem;
+export default ListItem;
