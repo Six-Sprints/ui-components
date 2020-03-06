@@ -1,8 +1,26 @@
 import React, { Component } from "react";
-import { TextInput, LoginForm, SearchInput } from "ui-components";
+import { RegisterForm, CustomDatePicker, SelectInput } from "ui-components";
 
 export default class App extends Component {
   render() {
-    return <LoginForm email={true} />;
+    return (
+      <RegisterForm>
+        <CustomDatePicker
+          inputVariant="outlined"
+          openTo="year"
+          views={["year", "month", "date"]}
+          required
+          field="dob"
+          label="DOB"
+        />
+
+        <SelectInput
+          required
+          field="gender"
+          label="Gender"
+          options={["MALE", "FEMALE", "OTHERS"]}
+        />
+      </RegisterForm>
+    );
   }
 }

@@ -1,9 +1,10 @@
 import LoginForm from "./components/ui/login-form";
 import RegisterForm from "./components/ui/register-form";
 import ButtonGroup from "./components/form/button-group";
-import DatePicker from "./components/form/date-picker";
+import CustomDatePicker from "./components/form/date-picker";
 import SearchInput from "./components/form/search-input";
 import TextInput from "./components/form/text-input";
+import SelectInput from "./components/form/select-input";
 import TimePicker from "./components/form/time-picker";
 import TextAreaInput from "./components/form/textarea-input";
 import ChatBubble from "./components/ui/chat/chat-bubble";
@@ -16,8 +17,9 @@ export {
   LoginForm,
   RegisterForm,
   ButtonGroup,
-  DatePicker,
+  CustomDatePicker,
   SearchInput,
+  SelectInput,
   TextInput,
   TimePicker,
   TextAreaInput,

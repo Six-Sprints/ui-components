@@ -27,12 +27,8 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
       <div>
         <DatePicker
           {...rest}
-          disableFuture
-          inputVariant="outlined"
-          openTo="year"
           format="DD/MM/YYYY"
           label={label}
-          views={["year", "month", "date"]}
           value={value}
           onChange={e => {
             setValue(e.valueOf());

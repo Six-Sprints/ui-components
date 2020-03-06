@@ -14,6 +14,7 @@ const TextInput = asField(({ fieldState, fieldApi, ...props }) => {
     className,
     containerClassName,
     forwardedRef,
+    variant,
     format,
     label,
     ...rest
@@ -31,7 +32,7 @@ const TextInput = asField(({ fieldState, fieldApi, ...props }) => {
             }
           }}
           defaultValue={initialValue}
-          variant="outlined"
+          variant={variant || "outlined"}
           label={label}
           helperText={error}
           value={value || ""}
