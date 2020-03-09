@@ -11,7 +11,7 @@ import {
   isPasswordAndRequired,
   passwordMatchValidation
 } from "../../utils/validations";
-import { LinearProgress, Link } from "@material-ui/core";
+import { LinearProgress } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +29,9 @@ const RegisterForm = ({
   heading,
   btnText,
   inputVariant,
+  link,
+  loginPath,
+  loginNowText,
   children
 }) => {
   const classes = useStyles();
@@ -101,6 +104,12 @@ const RegisterForm = ({
             >
               {btnText || "Register"}
             </Button>
+
+            <Typography component={link} to={loginPath || "/login"}>
+              <p className={classes.link}>
+                {loginNowText || "Already have an account ? Login Now"}
+              </p>
+            </Typography>
           </Form>
         </div>
       </Grid>

@@ -7,7 +7,7 @@ export default class App extends Component {
       // <div style={{ width: "400px" }}>
       //   <ListItem name="Dr. Tanwar" text="MBBS AIIMS Delhi" time="10:45 AM" />
       // </div>
-      <LoginForm inputVariant="standard" />
+      <LoginForm inputVariant="standard" registerPath="/register" />
     );
   }
 }
