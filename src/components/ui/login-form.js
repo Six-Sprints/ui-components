@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { isPasswordAndRequired } from "../../utils/validations";
-import { LinearProgress, Link } from "@material-ui/core";
+import { LinearProgress } from "@material-ui/core";
 import TextInput from "../form/text-input";
 
 const useStyles = makeStyles(theme => ({
@@ -42,6 +42,7 @@ const LoginForm = ({
   registerText,
   btnText,
   inputVariant,
+  link,
   email
 }) => {
   const classes = useStyles();
@@ -104,7 +105,7 @@ const LoginForm = ({
             </Button>
 
             {registerPath && (
-              <Typography component={Link} to={registerPath}>
+              <Typography component={link} to={registerPath}>
                 <p className={classes.link}>
                   {registerText || "New user ? Register Now."}
                 </p>
