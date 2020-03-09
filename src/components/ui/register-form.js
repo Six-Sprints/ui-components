@@ -28,6 +28,7 @@ const RegisterForm = ({
   btnFullWidth,
   heading,
   btnText,
+  inputVariant,
   children
 }) => {
   const classes = useStyles();
@@ -44,6 +45,7 @@ const RegisterForm = ({
 
           <Form getApi={getFormApi} onSubmit={handleSubmit}>
             <TextInput
+              variant={inputVariant}
               required
               field="name"
               type="text"
@@ -53,6 +55,7 @@ const RegisterForm = ({
             />
             <TextInput
               required
+              variant={inputVariant}
               field="mobileNumber"
               type="tel"
               label="Mobile Number"
@@ -60,6 +63,7 @@ const RegisterForm = ({
               validateOnChange
             />
             <TextInput
+              variant={inputVariant}
               required
               field="email"
               type="email"
@@ -69,6 +73,7 @@ const RegisterForm = ({
             />
             <TextInput
               required
+              variant={inputVariant}
               field="password"
               type="password"
               validate={isPasswordAndRequired}
@@ -78,6 +83,7 @@ const RegisterForm = ({
             />
             <TextInput
               required
+              variant={inputVariant}
               field="confirmPassword"
               type="password"
               validate={passwordMatchValidation}

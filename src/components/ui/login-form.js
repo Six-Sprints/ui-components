@@ -41,6 +41,7 @@ const LoginForm = ({
   registerPath,
   registerText,
   btnText,
+  inputVariant,
   email
 }) => {
   const classes = useStyles();
@@ -58,6 +59,7 @@ const LoginForm = ({
           <Form getApi={getFormApi} onSubmit={handleSubmit}>
             {email ? (
               <TextInput
+                variant={inputVariant}
                 containerClassName={classes.input}
                 required
                 field="email"
@@ -68,6 +70,7 @@ const LoginForm = ({
               />
             ) : (
               <TextInput
+                variant={inputVariant}
                 containerClassName={classes.input}
                 required
                 field="mobileNumber"
@@ -79,6 +82,7 @@ const LoginForm = ({
             )}
 
             <TextInput
+              variant={inputVariant}
               containerClassName={classes.input}
               required
               field="password"
