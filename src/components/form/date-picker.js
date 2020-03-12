@@ -9,6 +9,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
     required,
     onChange,
     onBlur,
+    containerClassName,
     onFocus,
     label,
     minDate,
@@ -23,20 +24,23 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
   const { setValue } = fieldApi;
 
   return (
-    <MuiPickersUtilsProvider utils={MomentUtils}>
-      <div>
-        <DatePicker
-          {...rest}
-          format="DD/MM/YYYY"
-          label={label}
-          value={value}
-          onChange={e => {
-            setValue(e.valueOf());
-          }}
-        />
-        {touched && error && <FormHelperText>{error}</FormHelperText>}
-      </div>
-    </MuiPickersUtilsProvider>
+    <div className={containerClassName}>
+      <MuiPickersUtilsProvider utils={MomentUtils}>
+        <>
+          <DatePicker
+            className={className}
+            {...rest}
+            format="DD/MM/YYYY"
+            label={label}
+            value={value}
+            onChange={e => {
+              setValue(e.valueOf());
+            }}
+          />
+          {touched && error && <FormHelperText>{error}</FormHelperText>}
+        </>
+      </MuiPickersUtilsProvider>
+    </div>
   );
 });
 

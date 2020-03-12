@@ -13,6 +13,7 @@ const CustomTimePicker = asField(({ fieldState, fieldApi, ...props }) => {
     label,
     minDate,
     className,
+    containerClassName,
     maxLength,
     format,
     hideLabel,
@@ -23,20 +24,23 @@ const CustomTimePicker = asField(({ fieldState, fieldApi, ...props }) => {
   const { setValue } = fieldApi;
 
   return (
-    <MuiPickersUtilsProvider utils={MomentUtils}>
-      <div>
-        <TimePicker
-          label={label}
-          value={value}
-          inputVariant="outlined"
-          {...rest}
-          onChange={e => {
-            setValue(e.valueOf());
-          }}
-        />
-        {touched && error && <FormHelperText>{error}</FormHelperText>}
-      </div>
-    </MuiPickersUtilsProvider>
+    <div className={containerClassName}>
+      <MuiPickersUtilsProvider utils={MomentUtils}>
+        <>
+          <TimePicker
+            className={className}
+            label={label}
+            value={value}
+            inputVariant="outlined"
+            {...rest}
+            onChange={e => {
+              setValue(e.valueOf());
+            }}
+          />
+          {touched && error && <FormHelperText>{error}</FormHelperText>}
+        </>
+      </MuiPickersUtilsProvider>
+    </div>
   );
 });
 
