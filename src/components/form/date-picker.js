@@ -26,7 +26,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
   return (
     <div className={containerClassName}>
       <MuiPickersUtilsProvider utils={MomentUtils}>
-        <>
+        <div>
           <DatePicker
             className={className}
             {...rest}
@@ -38,7 +38,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
             }}
           />
           {touched && error && <FormHelperText>{error}</FormHelperText>}
-        </>
+        </div>
       </MuiPickersUtilsProvider>
     </div>
   );
