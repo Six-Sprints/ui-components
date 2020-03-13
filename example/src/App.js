@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SearchInput, ListItem, LoginForm } from "ui-components";
+import { RegisterForm } from "ui-components";
 
 export default class App extends Component {
   handleSubmit = val => {
@@ -7,9 +7,10 @@ export default class App extends Component {
   };
   render() {
     return (
-      <div style={{ width: "400px" }}>
-        <SearchInput button onSearchSubmit={this.handleSubmit} />
-      </div>
+      // <div style={{ width: "400px" }}>
+      //   <SearchInput button onSearchSubmit={this.handleSubmit} />
+      // </div>
+      <RegisterForm handleSubmit={this.handleSubmit} />
     );
   }
 }

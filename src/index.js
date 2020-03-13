@@ -1,4 +1,5 @@
 import LoginForm from "./components/ui/login-form";
+import RegisterScreen from "./components/ui/register-screen";
 import RegisterForm from "./components/ui/register-form";
 import ButtonGroup from "./components/form/button-group";
 import CustomDatePicker from "./components/form/date-picker";
@@ -16,6 +17,7 @@ import SidebarContext from "./context/sidebar";
 
 export {
   LoginForm,
+  RegisterScreen,
   RegisterForm,
   ButtonGroup,
   CustomDatePicker,
