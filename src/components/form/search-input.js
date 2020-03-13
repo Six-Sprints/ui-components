@@ -44,8 +44,7 @@ const SearchInput = asField(({ ...props }) => {
     containerClassName,
     onSearchSubmit,
     icon,
-    button,
-    handleSearch
+    button
   } = props;
 
   let formApi;
@@ -81,7 +80,7 @@ const SearchInput = asField(({ ...props }) => {
         )}
         {button && (
           <Button
-            onClick={handleSearch}
+            type="submit"
             variant="contained"
             color="primary"
             disableElevation
