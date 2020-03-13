@@ -1,6 +1,6 @@
 import React from "react";
 import { asField, Form, Text } from "informed";
-import { IconButton, Button, Box, makeStyles } from "@material-ui/core";
+import { IconButton, Button, Box, makeStyles, fade } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles(theme => ({
