@@ -16,11 +16,16 @@ const RegisterForm = ({
   inputVariant,
   direction,
   inputClassName,
+  initialValues,
   children,
   ...rest
 }) => {
   return (
-    <Form getApi={getFormApi} onSubmit={handleSubmit}>
+    <Form
+      getApi={getFormApi}
+      onSubmit={handleSubmit}
+      initialValues={initialValues}
+    >
       <Grid container direction={direction || "column"} {...rest}>
         <TextInput
           containerClassName={inputClassName}
@@ -78,7 +83,7 @@ const RegisterForm = ({
       </Grid>
 
       <Button
-        containerClassName={inputClassName}
+        className={inputClassName}
         fullWidth={btnFullWidth}
         type="submit"
         color="primary"

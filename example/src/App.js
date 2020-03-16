@@ -10,7 +10,10 @@ export default class App extends Component {
       // <div style={{ width: "400px" }}>
       //   <SearchInput button onSearchSubmit={this.handleSubmit} />
       // </div>
-      <RegisterForm handleSubmit={this.handleSubmit} />
+      <RegisterForm
+        initialValues={{ name: "Paul" }}
+        handleSubmit={this.handleSubmit}
+      />
     );
   }
 }
