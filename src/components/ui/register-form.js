@@ -15,6 +15,7 @@ const RegisterForm = ({
   btnText,
   inputVariant,
   direction,
+  inputClassName,
   children,
   ...rest
 }) => {
@@ -22,6 +23,7 @@ const RegisterForm = ({
     <Form getApi={getFormApi} onSubmit={handleSubmit}>
       <Grid container direction={direction || "column"} {...rest}>
         <TextInput
+          containerClassName={inputClassName}
           variant={inputVariant}
           required
           field="name"
@@ -31,6 +33,7 @@ const RegisterForm = ({
           validateOnChange
         />
         <TextInput
+          containerClassName={inputClassName}
           required
           variant={inputVariant}
           field="mobileNumber"
@@ -40,6 +43,7 @@ const RegisterForm = ({
           validateOnChange
         />
         <TextInput
+          containerClassName={inputClassName}
           variant={inputVariant}
           required
           field="email"
@@ -50,6 +54,7 @@ const RegisterForm = ({
         />
         <TextInput
           required
+          containerClassName={inputClassName}
           variant={inputVariant}
           field="password"
           type="password"
@@ -60,6 +65,7 @@ const RegisterForm = ({
         />
         <TextInput
           required
+          containerClassName={inputClassName}
           variant={inputVariant}
           field="confirmPassword"
           type="password"
@@ -72,6 +78,7 @@ const RegisterForm = ({
       </Grid>
 
       <Button
+        containerClassName={inputClassName}
         fullWidth={btnFullWidth}
         type="submit"
         color="primary"
