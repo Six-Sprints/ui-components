@@ -6,6 +6,7 @@ import {
   isPasswordAndRequired,
   passwordMatchValidation
 } from "../../utils/validations";
+import { Grid } from "@material-ui/core";
 
 const RegisterForm = ({
   handleSubmit,
@@ -13,64 +14,68 @@ const RegisterForm = ({
   btnFullWidth,
   btnText,
   inputVariant,
-  children
+  direction,
+  children,
+  ...rest
 }) => {
   return (
     <Form getApi={getFormApi} onSubmit={handleSubmit}>
-      <TextInput
-        variant={inputVariant}
-        required
-        field="name"
-        type="text"
-        label="Name"
-        validateOnBlur
-        validateOnChange
-      />
-      <TextInput
-        required
-        variant={inputVariant}
-        field="mobileNumber"
-        type="tel"
-        label="Mobile Number"
-        validateOnBlur
-        validateOnChange
-      />
-      <TextInput
-        variant={inputVariant}
-        required
-        field="email"
-        type="email"
-        label="Email"
-        validateOnBlur
-        validateOnChange
-      />
-      <TextInput
-        required
-        variant={inputVariant}
-        field="password"
-        type="password"
-        validate={isPasswordAndRequired}
-        label="Password"
-        validateOnBlur
-        validateOnChange
-      />
-      <TextInput
-        required
-        variant={inputVariant}
-        field="confirmPassword"
-        type="password"
-        validate={passwordMatchValidation}
-        label="Confirm Password"
-        validateOnBlur
-        validateOnChange
-      />
-      {children}
+      <Grid container direction={direction || "column"} {...rest}>
+        <TextInput
+          variant={inputVariant}
+          required
+          field="name"
+          type="text"
+          label="Name"
+          validateOnBlur
+          validateOnChange
+        />
+        <TextInput
+          required
+          variant={inputVariant}
+          field="mobileNumber"
+          type="tel"
+          label="Mobile Number"
+          validateOnBlur
+          validateOnChange
+        />
+        <TextInput
+          variant={inputVariant}
+          required
+          field="email"
+          type="email"
+          label="Email"
+          validateOnBlur
+          validateOnChange
+        />
+        <TextInput
+          required
+          variant={inputVariant}
+          field="password"
+          type="password"
+          validate={isPasswordAndRequired}
+          label="Password"
+          validateOnBlur
+          validateOnChange
+        />
+        <TextInput
+          required
+          variant={inputVariant}
+          field="confirmPassword"
+          type="password"
+          validate={passwordMatchValidation}
+          label="Confirm Password"
+          validateOnBlur
+          validateOnChange
+        />
+        {children}
+      </Grid>
 
       <Button
         fullWidth={btnFullWidth}
         type="submit"
-        variant="contained"
         color="primary"
+        variant="contained"
       >
         {btnText || "Register"}
       </Button>
