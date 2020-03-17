@@ -10,10 +10,10 @@ import {
 } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
   formControl: {
-    minWidth: 240
+    minWidth: 210
   },
   selectEmpty: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(1)
   }
 }));
 
@@ -46,12 +46,16 @@ const SelectInput = asField(({ fieldState, fieldApi, ...props }) => {
   return (
     <div className={containerClassName}>
       <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel ref={inputLabel} id="select-label">
+        <InputLabel
+          style={{ marginTop: "8%" }}
+          ref={inputLabel}
+          id="select-label"
+        >
           {label}
         </InputLabel>
         <Select
           labelId="select-label"
-          className={className}
+          className={`MuiFormControl-marginNormal ${className}`}
           labelWidth={labelWidth}
           value={value}
           {...rest}

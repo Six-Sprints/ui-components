@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { RegisterForm, CustomDatePicker, SelectInput } from "ui-components";
+import {
+  RegisterForm,
+  CustomDatePicker,
+  SelectInput,
+  SearchInput
+} from "ui-components";
 
 export default class App extends Component {
   handleSubmit = val => {
@@ -7,12 +12,9 @@ export default class App extends Component {
   };
   render() {
     return (
-      // <div style={{ width: "400px" }}>
-      //   <SearchInput button onSearchSubmit={this.handleSubmit} />
-      // </div>
       <div style={{ backgroundColor: "#F6F7FC" }}>
+        <SearchInput placeholder="Search by UHID or Mobile Number" button />
         <RegisterForm
-          inputClassName="white-bg"
           initialValues={{ name: "Paul" }}
           handleSubmit={this.handleSubmit}
         >
@@ -29,9 +31,7 @@ export default class App extends Component {
 
           <SelectInput
             required
-            className="white-bg"
-            containerClassName="mt"
-            options={[]}
+            options={["Doctor"]}
             labelKey="name"
             field="doctor"
             placeholder="Select Doctor"

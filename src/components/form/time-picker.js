@@ -28,7 +28,7 @@ const CustomTimePicker = asField(({ fieldState, fieldApi, ...props }) => {
       <MuiPickersUtilsProvider utils={MomentUtils}>
         <div>
           <TimePicker
-            className={className}
+            className={`MuiFormControl-marginNormal ${className}`}
             label={label}
             value={value}
             inputVariant="outlined"

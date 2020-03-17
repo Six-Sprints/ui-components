@@ -5,7 +5,6 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles(theme => ({
   search: {
-    border: "hidden",
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: theme.palette.common.white,
