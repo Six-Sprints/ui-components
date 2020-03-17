@@ -26,6 +26,7 @@ const TextInput = asField(({ fieldState, fieldApi, ...props }) => {
     <div className={containerClassName}>
       <div style={{ position: "relative", width: "100%" }}>
         <TextField
+          className={className}
           ref={refer => {
             ref = refer;
             if (forwardedRef) {

@@ -16,6 +16,7 @@ const RegisterForm = ({
   inputVariant,
   direction,
   inputClassName,
+  className,
   initialValues,
   children,
   ...rest
@@ -28,7 +29,8 @@ const RegisterForm = ({
     >
       <Grid container direction={direction || "column"} {...rest}>
         <TextInput
-          containerClassName={inputClassName}
+          containerClassName={className}
+          className={inputClassName}
           variant={inputVariant}
           required
           field="name"
@@ -38,7 +40,8 @@ const RegisterForm = ({
           validateOnChange
         />
         <TextInput
-          containerClassName={inputClassName}
+          containerClassName={className}
+          className={inputClassName}
           required
           variant={inputVariant}
           field="mobileNumber"
@@ -48,7 +51,8 @@ const RegisterForm = ({
           validateOnChange
         />
         <TextInput
-          containerClassName={inputClassName}
+          containerClassName={className}
+          className={inputClassName}
           variant={inputVariant}
           required
           field="email"
@@ -59,7 +63,8 @@ const RegisterForm = ({
         />
         <TextInput
           required
-          containerClassName={inputClassName}
+          containerClassName={className}
+          className={inputClassName}
           variant={inputVariant}
           field="password"
           type="password"
@@ -70,7 +75,8 @@ const RegisterForm = ({
         />
         <TextInput
           required
-          containerClassName={inputClassName}
+          containerClassName={className}
+          className={inputClassName}
           variant={inputVariant}
           field="confirmPassword"
           type="password"

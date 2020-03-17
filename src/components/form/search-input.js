@@ -27,8 +27,8 @@ const useStyles = makeStyles(theme => ({
     "&:focus": {
       outline: "none"
     },
-    backgroundColor: "transparent",
-    padding: theme.spacing(2, 1, 2, 2),
+    backgroundColor: "#FFFFFF",
+    padding: theme.spacing(3, 2, 3, 3),
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("md")]: {
