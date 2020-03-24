@@ -45,6 +45,7 @@ const LoginForm = ({
   registerText,
   btnText,
   inputVariant,
+  linkClass,
   link,
   email
 }) => {
@@ -102,28 +103,42 @@ const LoginForm = ({
               validateOnChange
             />
 
-            <Button
-              className={classes.input}
-              fullWidth
-              disabled={loading}
-              type="submit"
-              variant="contained"
-              color="primary"
-            >
-              {btnText || "Login"}
-            </Button>
-            {resetPasswordPath && (
-              <Typography component={link} to={resetPasswordPath}>
-                <p className={classes.link}>Forgot Password ?</p>
-              </Typography>
-            )}
-            {registerPath && (
-              <Typography component={link} to={registerPath}>
-                <p className={classes.link}>
+            <Box my={2}>
+              <Button
+                className={classes.input}
+                fullWidth
+                disabled={loading}
+                type="submit"
+                variant="contained"
+                color="primary"
+              >
+                {btnText || "Login"}
+              </Button>
+            </Box>
+
+            <Box my={2}>
+              {resetPasswordPath && (
+                <Typography
+                  className={classes.link || linkClass}
+                  component={link}
+                  to={resetPasswordPath}
+                >
+                  Forgot Password ?
+                </Typography>
+              )}
+            </Box>
+
+            <Box my={2}>
+              {registerPath && (
+                <Typography
+                  className={classes.link || linkClass}
+                  component={link}
+                  to={registerPath}
+                >
                   {registerText || "New user ? Register Now."}
-                </p>
-              </Typography>
-            )}
+                </Typography>
+              )}
+            </Box>
           </Form>
         </div>
       </Grid>

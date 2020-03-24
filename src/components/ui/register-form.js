@@ -6,7 +6,7 @@ import {
   isPasswordAndRequired,
   passwordMatchValidation
 } from "../../utils/validations";
-import { Grid } from "@material-ui/core";
+import { Grid, Box } from "@material-ui/core";
 
 const RegisterForm = ({
   handleSubmit,
@@ -87,16 +87,17 @@ const RegisterForm = ({
         />
         {children}
       </Grid>
-
-      <Button
-        className={inputClassName}
-        fullWidth={btnFullWidth}
-        type="submit"
-        color="primary"
-        variant="contained"
-      >
-        {btnText || "Register"}
-      </Button>
+      <Box my={2}>
+        <Button
+          className={inputClassName}
+          fullWidth={btnFullWidth}
+          type="submit"
+          color="primary"
+          variant="contained"
+        >
+          {btnText || "Register"}
+        </Button>
+      </Box>
     </Form>
   );
 };

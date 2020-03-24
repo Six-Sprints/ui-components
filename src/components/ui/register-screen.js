@@ -11,7 +11,8 @@ const useStyles = makeStyles(theme => ({
     height: "100vh"
   },
   link: {
-    textDecoration: "none"
+    textDecoration: "none",
+    fontSize: 14
   }
 }));
 
@@ -21,6 +22,8 @@ const RegisterScreen = ({
   loading,
   bgImageClass,
   registerClass,
+  logo,
+  logoClass,
   btnFullWidth,
   heading,
   btnText,
@@ -39,6 +42,11 @@ const RegisterScreen = ({
       <Grid item xs={12} sm={8} md={4} component={Paper}>
         {loading && <LinearProgress />}
         <div className={registerClass}>
+          {logo && (
+            <Box>
+              <img className={logoClass} alt="logo-svg" src={logo} />
+            </Box>
+          )}
           <Typography component="h1" variant="h5">
             {heading}
           </Typography>

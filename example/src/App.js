@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { LoginForm } from "ui-components";
+import { LoginForm, RegisterScreen } from "ui-components";
 
 export default class App extends Component {
   handleSubmit = val => {
@@ -8,12 +8,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <LoginForm
-          resetPasswordPath="/reset"
-          registerPath="/register"
-          logoClass="logo"
-          logo="https://storage.googleapis.com/eclinic_assets/tenants/jyoti/logo.png"
-        />
+        <RegisterScreen btnFullWidth />
       </div>
     );
   }
