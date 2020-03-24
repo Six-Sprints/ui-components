@@ -119,7 +119,7 @@ const LoginForm = ({
             <Box my={2}>
               {resetPasswordPath && (
                 <Typography
-                  className={classes.link || linkClass}
+                  className={linkClass || classes.link}
                   component={link}
                   to={resetPasswordPath}
                 >
@@ -131,7 +131,7 @@ const LoginForm = ({
             <Box my={2}>
               {registerPath && (
                 <Typography
-                  className={classes.link || linkClass}
+                  className={linkClass || classes.link}
                   component={link}
                   to={registerPath}
                 >
