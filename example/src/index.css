@@ -7,3 +7,13 @@ body {
 .white-bg {
   background-color: white;
 }
+
+.mr {
+  margin-right: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
