@@ -59,10 +59,12 @@ const RegisterScreen = ({
             inputVariant={inputVariant}
             children={children}
           />
-          <Typography component={link} to={loginPath || "/login"}>
-            <span className={linkClass || classes.link}>
-              {loginNowText || "Already have an account ? Login Now"}
-            </span>
+          <Typography
+            className={linkClass || classes.link}
+            component={link}
+            to={loginPath || "/login"}
+          >
+            {loginNowText || "Already have an account ? Login Now"}
           </Typography>
         </div>
       </Grid>
