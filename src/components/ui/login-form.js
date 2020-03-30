@@ -53,8 +53,12 @@ const LoginForm = ({
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={8} className={bgImageClass} />
-      <Grid item xs={12} sm={8} md={4} component={Paper}>
+      <Grid item xs={false} sm={7} md={8}>
+        <Box height={1} pt={10}>
+          <div className={bgImageClass}></div>
+        </Box>
+      </Grid>
+      <Grid item xs={12} sm={5} md={4} component={Paper}>
         {loading && <LinearProgress />}
         <div className={classes.paper || loginClass}>
           {logo && (
