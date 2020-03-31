@@ -3,7 +3,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { LinearProgress, CssBaseline, Paper } from "@material-ui/core";
+import { LinearProgress, CssBaseline, Paper, Box } from "@material-ui/core";
 import RegisterForm from "./register-form";
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +38,11 @@ const RegisterScreen = ({
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={8} className={bgImageClass} />
+      <Grid item xs={false} sm={7} md={8}>
+        <Box height={1} pt={10}>
+          <div className={bgImageClass}></div>
+        </Box>
+      </Grid>
       <Grid item xs={12} sm={8} md={4} component={Paper}>
         {loading && <LinearProgress />}
         <div className={registerClass}>

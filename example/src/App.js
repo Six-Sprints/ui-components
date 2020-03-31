@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginForm } from "ui-components";
+import { RegisterScreen, SelectInput, CustomDatePicker } from "ui-components";
 import { makeStyles, Link } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -48,19 +48,35 @@ const App = () => {
   };
 
   return (
-    <LoginForm
-      handleSubmit={handleSubmit}
-      resetPasswordPath={"/reset-password"}
-      inputVariant="outlined"
-      bg="https://storage.googleapis.com/eclinic_assets/tenants/jyoti/banner.svg"
-      loginClass={classes.paper}
-      logoClass={classes.logo}
-      link={Link}
-      linkClass={classes.link}
+    <RegisterScreen
+      btnFullWidth
+      registerClass={classes.paper}
       bgImageClass={classes.image}
-      registerPath={"/register"}
-      registerText="New User ? Register Now "
-    />
+      btnText="Register"
+      heading="Register"
+      linkClass={classes.link}
+      link={Link}
+      inputVariant="outlined"
+      handleSubmit={handleSubmit}
+    >
+      <CustomDatePicker
+        inputVariant="outlined"
+        openTo="year"
+        views={["year", "month", "date"]}
+        required
+        field="dob"
+        label="DOB"
+      />
+
+      <SelectInput
+        required
+        variant="outlined"
+        className={classes.selectInput}
+        field="gender"
+        label="Gender"
+        options={["MALE", "FEMALE", "OTHERS"]}
+      />
+    </RegisterScreen>
   );
 };
 
