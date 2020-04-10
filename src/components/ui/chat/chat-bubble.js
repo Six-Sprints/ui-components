@@ -7,6 +7,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   textBubbleLeft: {
+    width: "70%",
     borderRadius: theme.spacing(0, 4, 4, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.common.black,
@@ -15,15 +16,21 @@ const useStyles = makeStyles(theme => ({
   },
 
   textBubbleRight: {
+    width: "70%",
     borderRadius: theme.spacing(4, 4, 0, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.secondary.main
+  },
+
+  bg: {
+    backgroundColor: theme.palette.primary.main
   }
 }));
 
 const ChatBubble = ({
   user,
+  left,
   text,
   time,
   textBubbleLeftClass,
@@ -31,34 +38,26 @@ const ChatBubble = ({
 }) => {
   const classes = useStyles();
   return (
-    <Box
-      my={2}
-      mx={1}
-      display="flex"
-      justifyContent={user ? "flex-end" : "flex-start"}
-    >
-      <Box display="flex" width="75%">
-        {!user && (
+    <Box my={2} mx={1} display="flex">
+      <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
+        {left && (
           <Box mr={2}>
-            <Avatar>S</Avatar>
+            <Avatar>{user && user[0]}</Avatar>
           </Box>
         )}
 
         <Box
           className={
-            user
-              ? textBubbleRightClass || classes.textBubbleRight
-              : textBubbleLeftClass || classes.textBubbleLeft
+            left
+              ? textBubbleLeftClass || classes.textBubbleLeft
+              : textBubbleRightClass || classes.textBubbleRight
           }
         >
           <Typography variant="subtitle2">{text}</Typography>
-          <Box mt={4}>
-            <Typography variant="caption">
-              <strong> {time}</strong>{" "}
-            </Typography>
+          <Box mt={3}>
+            <Typography variant="caption">{time}</Typography>
           </Box>
         </Box>
-        <Box ml={2}></Box>
       </Box>
     </Box>
   );

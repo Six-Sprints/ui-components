@@ -1,6 +1,6 @@
 import React from "react";
-import { RegisterScreen, SelectInput, CustomDatePicker } from "ui-components";
-import { makeStyles, Link } from "@material-ui/core";
+import { ChatBubble } from "ui-components";
+import { makeStyles, Link, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,35 +48,22 @@ const App = () => {
   };
 
   return (
-    <RegisterScreen
-      btnFullWidth
-      registerClass={classes.paper}
-      bgImageClass={classes.image}
-      btnText="Register"
-      heading="Register"
-      linkClass={classes.link}
-      link={Link}
-      inputVariant="outlined"
-      handleSubmit={handleSubmit}
-    >
-      <CustomDatePicker
-        inputVariant="outlined"
-        openTo="year"
-        views={["year", "month", "date"]}
-        required
-        field="dob"
-        label="DOB"
-      />
+    <div>
+      <Paper style={{ width: "700px" }}>
+        <ChatBubble
+          left
+          user={"X"}
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          time="10:56 AM"
+        />
 
-      <SelectInput
-        required
-        variant="outlined"
-        className={classes.selectInput}
-        field="gender"
-        label="Gender"
-        options={["MALE", "FEMALE", "OTHERS"]}
-      />
-    </RegisterScreen>
+        <ChatBubble
+          user={"Paul"}
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+          time="10:56 AM"
+        />
+      </Paper>
+    </div>
   );
 };
 
