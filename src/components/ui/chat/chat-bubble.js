@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   textBubbleLeft: {
-    width: "70%",
+    maxWidth: "80%",
     borderRadius: theme.spacing(0, 4, 4, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.common.black,
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   textBubbleRight: {
-    width: "70%",
+    maxWidth: "80%",
     borderRadius: theme.spacing(4, 4, 0, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.primary.contrastText,
@@ -38,8 +38,8 @@ const ChatBubble = ({
 }) => {
   const classes = useStyles();
   return (
-    <Box my={2} mx={1} display="flex">
-      <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
+    <Box my={2} mx={1}>
+      <Box display="flex" justifyContent={"flex-end"}>
         {left && (
           <Box mr={2}>
             <Avatar>{user && user[0]}</Avatar>
