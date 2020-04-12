@@ -39,7 +39,7 @@ const ChatBubble = ({
   const classes = useStyles();
   return (
     <Box my={2} mx={1}>
-      <Box display="flex" justifyContent={"flex-end"}>
+      <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
         {left && (
           <Box mr={2}>
             <Avatar>{user && user[0]}</Avatar>
