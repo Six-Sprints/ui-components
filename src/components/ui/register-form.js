@@ -50,17 +50,7 @@ const RegisterForm = ({
           validateOnBlur
           validateOnChange
         />
-        <TextInput
-          containerClassName={className}
-          className={inputClassName}
-          variant={inputVariant}
-          required
-          field="email"
-          type="email"
-          label="Email"
-          validateOnBlur
-          validateOnChange
-        />
+
         <TextInput
           required
           containerClassName={className}
