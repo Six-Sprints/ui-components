@@ -101,7 +101,6 @@ const LoginForm = ({
               required
               field="password"
               type="password"
-              validate={isPasswordAndRequired}
               label="Password"
               validateOnBlur
               validateOnChange

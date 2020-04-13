@@ -1,5 +1,5 @@
 import React from "react";
-import { ChatBubble } from "ui-components";
+import { RegisterForm } from "ui-components";
 import { makeStyles, Link, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -50,13 +50,7 @@ const App = () => {
   return (
     <div>
       <Paper style={{ width: "700px" }}>
-        <ChatBubble left user={"X"} text="Lorem ipsum d" time="10:56 AM" />
-
-        <ChatBubble
-          user={"Paul"}
-          text="Lorem  ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
-          time="10:56 AM"
-        />
+        <RegisterForm />
       </Paper>
     </div>
   );

@@ -2,10 +2,7 @@ import React from "react";
 import { Form } from "informed";
 import TextInput from "../../components/form/text-input";
 import Button from "@material-ui/core/Button";
-import {
-  isPasswordAndRequired,
-  passwordMatchValidation
-} from "../../utils/validations";
+import { passwordMatchValidation } from "../../utils/validations";
 import { Grid, Box } from "@material-ui/core";
 
 const RegisterForm = ({
@@ -58,7 +55,6 @@ const RegisterForm = ({
           variant={inputVariant}
           field="password"
           type="password"
-          validate={isPasswordAndRequired}
           label="Password"
           validateOnBlur
           validateOnChange
