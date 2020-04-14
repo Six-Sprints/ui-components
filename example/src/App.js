@@ -53,7 +53,7 @@ const App = () => {
         <LoginForm
           resetPasswordPath={"/reset-password"}
           registerPath={`/register`}
-          registerText="Don't have an account ? Register Now. "
+          registerText="Register"
         />
       </Paper>
     </div>

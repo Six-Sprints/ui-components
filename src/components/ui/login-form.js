@@ -42,7 +42,7 @@ const LoginForm = ({
   loginClass,
   registerPath,
   resetPasswordPath,
-  registerText,
+  registerText = "Register",
   btnText,
   inputVariant,
   linkClass,
@@ -73,6 +73,7 @@ const LoginForm = ({
           <Form getApi={getFormApi} onSubmit={handleSubmit}>
             {email ? (
               <TextInput
+                fullWidth
                 variant={inputVariant}
                 containerClassName={classes.input}
                 required
@@ -84,6 +85,7 @@ const LoginForm = ({
               />
             ) : (
               <TextInput
+                fullWidth
                 variant={inputVariant}
                 containerClassName={classes.input}
                 required
@@ -96,6 +98,7 @@ const LoginForm = ({
             )}
 
             <TextInput
+              fullWidth
               variant={inputVariant}
               containerClassName={classes.input}
               required
@@ -108,13 +111,14 @@ const LoginForm = ({
 
             <Box my={2} display="flex" justifyContent="flex-end">
               {resetPasswordPath && (
-                <Typography
-                  variant="body2"
-                  className={linkClass || classes.link}
-                  component={link}
-                  to={resetPasswordPath}
-                >
-                  Forgot Password ?
+                <Typography variant="body2">
+                  <a
+                    className={linkClass || classes.link}
+                    href={resetPasswordPath}
+                  >
+                    {" "}
+                    Forgot Password ?
+                  </a>
                 </Typography>
               )}
             </Box>
@@ -135,20 +139,14 @@ const LoginForm = ({
             <Box my={2}>
               {registerPath && (
                 <div>
-                  <Typography variant="body2" component="span">
+                  <Typography variant="body2">
                     Don't have an account ?
-                  </Typography>
-                  <Typography
-                    className={linkClass || classes.link}
-                    component={link}
-                    to={registerPath}
-                    variant="body2"
-                    component="span"
-                  >
-                    {" "}
-                    Register{" "}
-                  </Typography>
-                  <Typography variant="body2" component="span">
+                    <a
+                      className={linkClass || classes.link}
+                      href={registerPath}
+                    >
+                      {` ${registerText} `}
+                    </a>
                     Now
                   </Typography>
                 </div>
