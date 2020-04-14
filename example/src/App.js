@@ -1,5 +1,5 @@
 import React from "react";
-import { RegisterForm } from "ui-components";
+import { LoginForm } from "ui-components";
 import { makeStyles, Link, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -49,8 +49,12 @@ const App = () => {
 
   return (
     <div>
-      <Paper style={{ width: "700px" }}>
-        <RegisterForm />
+      <Paper>
+        <LoginForm
+          resetPasswordPath={"/reset-password"}
+          registerPath={`/register`}
+          registerText="Don't have an account ? Register Now. "
+        />
       </Paper>
     </div>
   );

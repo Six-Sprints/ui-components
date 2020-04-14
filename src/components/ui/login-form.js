@@ -106,6 +106,19 @@ const LoginForm = ({
               validateOnChange
             />
 
+            <Box my={2} display="flex" justifyContent="flex-end">
+              {resetPasswordPath && (
+                <Typography
+                  variant="body2"
+                  className={linkClass || classes.link}
+                  component={link}
+                  to={resetPasswordPath}
+                >
+                  Forgot Password ?
+                </Typography>
+              )}
+            </Box>
+
             <Box my={2}>
               <Button
                 className={classes.input}
@@ -120,26 +133,25 @@ const LoginForm = ({
             </Box>
 
             <Box my={2}>
-              {resetPasswordPath && (
-                <Typography
-                  className={linkClass || classes.link}
-                  component={link}
-                  to={resetPasswordPath}
-                >
-                  Forgot Password ?
-                </Typography>
-              )}
-            </Box>
-
-            <Box my={2}>
               {registerPath && (
-                <Typography
-                  className={linkClass || classes.link}
-                  component={link}
-                  to={registerPath}
-                >
-                  {registerText || "New user ? Register Now."}
-                </Typography>
+                <div>
+                  <Typography variant="body2" component="span">
+                    Don't have an account ?
+                  </Typography>
+                  <Typography
+                    className={linkClass || classes.link}
+                    component={link}
+                    to={registerPath}
+                    variant="body2"
+                    component="span"
+                  >
+                    {" "}
+                    Register{" "}
+                  </Typography>
+                  <Typography variant="body2" component="span">
+                    Now
+                  </Typography>
+                </div>
               )}
             </Box>
           </Form>
