@@ -7,13 +7,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   textBubbleLeftTop: {
-    maxWidth: "80%",
+    maxWidth: "70%",
     borderRadius: theme.spacing(0, 4, 4, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.common.black,
     font: "10px",
-    marginLeft: theme.spacing(7),
-    backgroundColor: theme.palette.chatBg
+    marginLeft: "9.5%",
+    backgroundColor: theme.palette.primary.main
   },
   textBubbleLeftBottom: {
     maxWidth: "80%",
@@ -22,11 +22,11 @@ const useStyles = makeStyles(theme => ({
 
     color: theme.palette.common.black,
     font: "10px",
-    backgroundColor: theme.palette.chatBg
+    backgroundColor: theme.palette.primary.main
   },
 
   textBubbleRightBottom: {
-    maxWidth: "80%",
+    maxWidth: "70%",
     borderRadius: theme.spacing(4, 4, 0, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.primary.contrastText,
