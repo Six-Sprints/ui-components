@@ -12,12 +12,14 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.common.black,
     font: "10px",
+    marginLeft: theme.spacing(7),
     backgroundColor: theme.palette.chatBg
   },
   textBubbleLeftBottom: {
     maxWidth: "80%",
     borderRadius: theme.spacing(4, 4, 4, 0),
     padding: theme.spacing(2, 2, 2, 2),
+
     color: theme.palette.common.black,
     font: "10px",
     backgroundColor: theme.palette.chatBg
@@ -45,17 +47,21 @@ const useStyles = makeStyles(theme => ({
 
 const ChatBubble = ({ user, left, text, time, sameUser }) => {
   const classes = useStyles();
+
+  const renderAvatar = user => {
+    return (
+      <Box mr={2}>
+        <Avatar>{user && user[0]}</Avatar>
+      </Box>
+    );
+  };
   return (
     <Box my={2} mx={1}>
       <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
-        {left && (
-          <Box mr={2}>
-            <Avatar>{user && user[0]}</Avatar>
-          </Box>
-        )}
+        {left ? (!sameUser ? renderAvatar(user) : null) : null}
 
         {!left && (
-          <Box alignSelf="flex-end">
+          <Box mr={2} alignSelf="flex-end">
             <Typography variant="caption">{time}</Typography>
           </Box>
         )}
@@ -73,7 +79,7 @@ const ChatBubble = ({ user, left, text, time, sameUser }) => {
           <Typography variant="subtitle2">{text}</Typography>
         </Box>
         {left && (
-          <Box alignSelf="flex-end">
+          <Box ml={2} alignSelf="flex-end">
             <Typography variant="caption">{time}</Typography>
           </Box>
         )}
