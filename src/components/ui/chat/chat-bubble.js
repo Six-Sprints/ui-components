@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 14
   },
 
-  textBubbleLeft: {
+  textBubbleLeftTop: {
     maxWidth: "80%",
     borderRadius: theme.spacing(0, 4, 4, 4),
     padding: theme.spacing(2, 2, 2, 2),
@@ -14,10 +14,25 @@ const useStyles = makeStyles(theme => ({
     font: "10px",
     backgroundColor: theme.palette.chatBg
   },
+  textBubbleLeftBottom: {
+    maxWidth: "80%",
+    borderRadius: theme.spacing(4, 4, 4, 0),
+    padding: theme.spacing(2, 2, 2, 2),
+    color: theme.palette.common.black,
+    font: "10px",
+    backgroundColor: theme.palette.chatBg
+  },
 
-  textBubbleRight: {
+  textBubbleRightBottom: {
     maxWidth: "80%",
     borderRadius: theme.spacing(4, 4, 0, 4),
+    padding: theme.spacing(2, 2, 2, 2),
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.secondary.main
+  },
+  textBubbleRightTop: {
+    maxWidth: "80%",
+    borderRadius: theme.spacing(4, 0, 4, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.secondary.main
@@ -28,14 +43,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ChatBubble = ({
-  user,
-  left,
-  text,
-  time,
-  textBubbleLeftClass,
-  textBubbleRightClass
-}) => {
+const ChatBubble = ({ user, left, text, time, sameUser }) => {
   const classes = useStyles();
   return (
     <Box my={2} mx={1}>
@@ -46,18 +54,29 @@ const ChatBubble = ({
           </Box>
         )}
 
+        {!left && (
+          <Box alignSelf="flex-end">
+            <Typography variant="caption">{time}</Typography>
+          </Box>
+        )}
         <Box
           className={
             left
-              ? textBubbleLeftClass || classes.textBubbleLeft
-              : textBubbleRightClass || classes.textBubbleRight
+              ? sameUser
+                ? classes.textBubbleLeftTop
+                : classes.textBubbleLeftBottom
+              : sameUser
+              ? classes.textBubbleRightTop
+              : classes.textBubbleRightBottom
           }
         >
           <Typography variant="subtitle2">{text}</Typography>
-          <Box mt={3}>
+        </Box>
+        {left && (
+          <Box alignSelf="flex-end">
             <Typography variant="caption">{time}</Typography>
           </Box>
-        </Box>
+        )}
       </Box>
     </Box>
   );

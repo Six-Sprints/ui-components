@@ -1,6 +1,6 @@
 import React from "react";
-import { LoginForm } from "ui-components";
-import { makeStyles, Link, Paper } from "@material-ui/core";
+import { ChatBubble } from "ui-components";
+import { makeStyles, Link, Paper, Box } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,15 +48,19 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Paper>
-        <LoginForm
-          resetPasswordPath={"/reset-password"}
-          registerPath={`/register`}
-          registerText="Register"
-        />
-      </Paper>
-    </div>
+    <Box width="600px">
+      <ChatBubble left user={"P"} text={"Loprem Ipsum"} time="10:56 AM" />
+      <ChatBubble
+        left
+        sameUser
+        user={"P"}
+        text={"Loprem Ipsum"}
+        time="10:56 AM"
+      />
+
+      <ChatBubble user={"P"} text={"Loprem Ipsum"} time="10:56 AM" />
+      <ChatBubble sameUser user={"P"} text={"Loprem Ipsum"} time="10:56 AM" />
+    </Box>
   );
 };
 
