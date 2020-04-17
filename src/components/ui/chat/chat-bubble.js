@@ -9,42 +9,30 @@ const useStyles = makeStyles(theme => ({
   textBubbleLeftTop: {
     maxWidth: "70%",
     borderRadius: theme.spacing(0, 4, 4, 4),
-    padding: theme.spacing(2, 2, 2, 2),
+    padding: theme.spacing(3),
     color: theme.palette.common.black,
     font: "10px",
 
-    backgroundColor: theme.palette.chatBg
-  },
-  textBubbleLeftBottom: {
-    maxWidth: "70%",
-    borderRadius: theme.spacing(4, 4, 4, 0),
-    padding: theme.spacing(2, 2, 2, 2),
-    color: theme.palette.common.black,
-    font: "10px",
     backgroundColor: theme.palette.chatBg
   },
 
   textBubbleRightBottom: {
     maxWidth: "70%",
     borderRadius: theme.spacing(4, 4, 0, 4),
-    padding: theme.spacing(2, 2, 2, 2),
-    color: theme.palette.primary.contrastText,
-    backgroundColor: theme.palette.secondary.main
-  },
-  textBubbleRightTop: {
-    maxWidth: "70%",
-    borderRadius: theme.spacing(4, 0, 4, 4),
-    padding: theme.spacing(2, 2, 2, 2),
+    padding: theme.spacing(3),
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.secondary.main
   },
 
   bg: {
     backgroundColor: theme.palette.primary.main
+  },
+  img: {
+    objectFit: "cover"
   }
 }));
 
-const ChatBubble = ({ user, left, text, time, sameUser }) => {
+const ChatBubble = ({ user, left, text, img, time, sameUser }) => {
   const classes = useStyles();
 
   const renderAvatar = user => {
@@ -69,7 +57,15 @@ const ChatBubble = ({ user, left, text, time, sameUser }) => {
             left ? classes.textBubbleLeftTop : classes.textBubbleRightBottom
           }
         >
-          <Typography variant="subtitle2">{text}</Typography>
+          {text && <Typography variant="subtitle2">{text}</Typography>}
+          {img && (
+            <img
+              className={classes.img}
+              width="100%"
+              alt="chat-img"
+              src={img}
+            />
+          )}
         </Box>
         {left && (
           <Box ml={2} alignSelf="flex-end">
