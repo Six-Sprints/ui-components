@@ -12,17 +12,16 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.common.black,
     font: "10px",
-    marginLeft: "9.5%",
-    backgroundColor: theme.palette.primary.main
+
+    backgroundColor: theme.palette.chatBg
   },
   textBubbleLeftBottom: {
-    maxWidth: "80%",
+    maxWidth: "70%",
     borderRadius: theme.spacing(4, 4, 4, 0),
     padding: theme.spacing(2, 2, 2, 2),
-
     color: theme.palette.common.black,
     font: "10px",
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.chatBg
   },
 
   textBubbleRightBottom: {
@@ -33,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main
   },
   textBubbleRightTop: {
-    maxWidth: "80%",
+    maxWidth: "70%",
     borderRadius: theme.spacing(4, 0, 4, 4),
     padding: theme.spacing(2, 2, 2, 2),
     color: theme.palette.primary.contrastText,
@@ -50,7 +49,7 @@ const ChatBubble = ({ user, left, text, time, sameUser }) => {
 
   const renderAvatar = user => {
     return (
-      <Box mr={2}>
+      <Box visibility={sameUser ? "hidden" : "visible"} mr={2}>
         <Avatar>{user && user[0]}</Avatar>
       </Box>
     );
@@ -58,7 +57,7 @@ const ChatBubble = ({ user, left, text, time, sameUser }) => {
   return (
     <Box my={2} mx={1}>
       <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
-        {left ? (!sameUser ? renderAvatar(user) : null) : null}
+        {left ? renderAvatar(user, sameUser) : null}
 
         {!left && (
           <Box mr={2} alignSelf="flex-end">
@@ -67,13 +66,7 @@ const ChatBubble = ({ user, left, text, time, sameUser }) => {
         )}
         <Box
           className={
-            left
-              ? sameUser
-                ? classes.textBubbleLeftTop
-                : classes.textBubbleLeftBottom
-              : sameUser
-              ? classes.textBubbleRightTop
-              : classes.textBubbleRightBottom
+            left ? classes.textBubbleLeftTop : classes.textBubbleRightBottom
           }
         >
           <Typography variant="subtitle2">{text}</Typography>
