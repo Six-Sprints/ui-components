@@ -75,7 +75,6 @@ const RegisterForm = ({
       </Grid>
       <Box my={2}>
         <Button
-          className={inputClassName}
           fullWidth={btnFullWidth}
           type="submit"
           color="primary"
