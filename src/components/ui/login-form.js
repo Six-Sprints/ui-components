@@ -126,7 +126,6 @@ const LoginForm = ({
 
             <Box my={2}>
               <Button
-                className={classes.input}
                 fullWidth
                 disabled={loading}
                 type="submit"
