@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { asField, Form, Text } from "informed";
 import { IconButton, Button, Box, makeStyles, fade } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
@@ -46,23 +46,20 @@ const SearchInput = asField(({ ...props }) => {
     button
   } = props;
 
-  let formApi;
+  const formApi = useRef();
 
-  const getFormApi = api => {
-    formApi = api;
-  };
   const handleSubmit = val => {
     if (!val.search) {
       return;
     }
     onSearchSubmit(val);
-    formApi.reset();
+    formApi.current.reset();
   };
 
   const classes = useStyles();
   return (
     <Form
-      getApi={getFormApi}
+      apiRef={formApi}
       className={containerClassName || classes.search}
       onSubmit={handleSubmit}
     >

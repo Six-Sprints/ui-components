@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginForm } from "ui-components";
+import { SearchInput } from "ui-components";
 import { makeStyles, Link, Paper, Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -48,15 +48,13 @@ const App = () => {
   };
 
   return (
-    <LoginForm>
-      <Box display={{ xs: "block", sm: "none" }}>
-        <Box display="flex" alignItems="flex-end" justifyContent="center">
-          <Button type="submit" variant="contained" color="primary">
-            Save
-          </Button>
-        </Box>
-      </Box>
-    </LoginForm>
+    <div>
+      <SearchInput
+        onSearchSubmit={handleSubmit}
+        placeholder="Search by UHID or Mobile Number"
+        button
+      />
+    </div>
   );
 };
 
