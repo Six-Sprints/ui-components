@@ -1,6 +1,6 @@
 import React from "react";
-import { ChatBubble } from "ui-components";
-import { makeStyles, Link, Paper, Box } from "@material-ui/core";
+import { LoginForm } from "ui-components";
+import { makeStyles, Link, Paper, Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,27 +48,15 @@ const App = () => {
   };
 
   return (
-    <Box width="600px">
-      <ChatBubble left user={"P"} text={"Loprem Ipsum"} time="10:56 AM" />
-      <ChatBubble
-        left
-        sameUser
-        user={"P"}
-        text={
-          "minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        }
-        time="10:56 AM"
-      />
-
-      <ChatBubble
-        user={"P"}
-        text={
-          "minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        }
-        time="10:56 AM"
-      />
-      <ChatBubble sameUser user={"P"} text={"Loprem Ipsum"} time="10:56 AM" />
-    </Box>
+    <LoginForm>
+      <Box display={{ xs: "block", sm: "none" }}>
+        <Box display="flex" alignItems="flex-end" justifyContent="center">
+          <Button type="submit" variant="contained" color="primary">
+            Save
+          </Button>
+        </Box>
+      </Box>
+    </LoginForm>
   );
 };
 

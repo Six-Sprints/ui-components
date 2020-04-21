@@ -47,6 +47,7 @@ const LoginForm = ({
   inputVariant,
   linkClass,
   link,
+  children,
   email
 }) => {
   const classes = useStyles();
@@ -154,6 +155,7 @@ const LoginForm = ({
             </Box>
           </Form>
         </div>
+        {children}
       </Grid>
     </Grid>
   );
