@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Avatar, makeStyles } from "@material-ui/core";
+import { Box, Typography, Avatar, makeStyles, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   roundBorder: {
@@ -14,6 +14,15 @@ const useStyles = makeStyles(theme => ({
     font: "10px",
 
     backgroundColor: theme.palette.chatBg
+  },
+
+  textBubble: {
+    maxWidth: "70%",
+    border: `1px solid ${theme.palette.primary.main}`,
+    borderRadius: theme.spacing(4, 4, 4, 4),
+    padding: theme.spacing(3),
+    color: theme.palette.primary.main
+    // backgroundColor: theme.palette.primary.main
   },
 
   textBubbleRightBottom: {
@@ -32,7 +41,17 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ChatBubble = ({ user, left, text, img, time, sameUser }) => {
+const ChatBubble = ({
+  handleClick,
+  messageType,
+  actions,
+  img,
+  time,
+  sameUser,
+  user,
+  left,
+  text
+}) => {
   const classes = useStyles();
 
   const renderAvatar = user => {
@@ -42,8 +61,32 @@ const ChatBubble = ({ user, left, text, img, time, sameUser }) => {
       </Box>
     );
   };
-  return (
-    <Box my={2} mx={1}>
+
+  const renderTextActions = (actionArr, text) => {
+    return (
+      <Box my={2} className={classes.textBubble}>
+        <Box mb={2}>
+          <Typography variant="subtitle2">{text}</Typography>
+        </Box>
+        {actionArr.map((item, index) => (
+          <Box key={index} my={1}>
+            <Button
+              fullWidth
+              onClick={handleClick.bind(this, item.actionUrl)}
+              disableElevation
+              variant="contained"
+              color="primary"
+            >
+              {item.name}
+            </Button>
+          </Box>
+        ))}
+      </Box>
+    );
+  };
+
+  const renderTextBubble = () => {
+    return (
       <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
         {left ? renderAvatar(user, sameUser) : null}
 
@@ -67,12 +110,21 @@ const ChatBubble = ({ user, left, text, img, time, sameUser }) => {
             />
           )}
         </Box>
+
         {left && (
           <Box ml={2} alignSelf="flex-end">
             <Typography variant="caption">{time}</Typography>
           </Box>
         )}
       </Box>
+    );
+  };
+
+  return (
+    <Box my={2} mx={1}>
+      {messageType === "AUTOMATED"
+        ? renderTextActions(actions, text)
+        : renderTextBubble(img, time, sameUser, user, left, text)}
     </Box>
   );
 };

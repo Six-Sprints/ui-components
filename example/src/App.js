@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchInput } from "ui-components";
+import { ChatBubble } from "ui-components";
 import { makeStyles, Link, Paper, Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -48,11 +48,18 @@ const App = () => {
   };
 
   return (
-    <div>
-      <SearchInput
-        onSearchSubmit={handleSubmit}
-        placeholder="Search by UHID or Mobile Number"
-        button
+    <div style={{ width: "500px" }}>
+      <ChatBubble
+        handleClick={e => {
+          console.log(e);
+        }}
+        messageType={"AUTOMATED"}
+        actions={[
+          { name: "Accept", actionUrl: "/yes" },
+          { name: "Ask more related questions", actionUrl: "/no" }
+        ]}
+        text="Has the question been answered by the doctor ?"
+        time="10:00 am"
       />
     </div>
   );
