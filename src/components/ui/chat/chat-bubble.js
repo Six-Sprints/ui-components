@@ -64,23 +64,25 @@ const ChatBubble = ({
 
   const renderTextActions = (actionArr, text) => {
     return (
-      <Box my={2} className={classes.textBubble}>
-        <Box mb={2}>
-          <Typography variant="subtitle2">{text}</Typography>
-        </Box>
-        {actionArr.map((item, index) => (
-          <Box key={index} my={1}>
-            <Button
-              fullWidth
-              onClick={handleClick.bind(this, item.actionUrl)}
-              disableElevation
-              variant="contained"
-              color="primary"
-            >
-              {item.name}
-            </Button>
+      <Box display="flex" justifyContent="center" my={2}>
+        <Box className={classes.textBubble}>
+          <Box mb="1rem">
+            <Typography variant="subtitle2">{text}</Typography>
           </Box>
-        ))}
+          {actionArr.map((item, index) => (
+            <Box key={index} my="1rem">
+              <Button
+                fullWidth
+                onClick={handleClick.bind(this, item.actionUrl)}
+                disableElevation
+                variant="contained"
+                color="primary"
+              >
+                {item.name}
+              </Button>
+            </Box>
+          ))}
+        </Box>
       </Box>
     );
   };
