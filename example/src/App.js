@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-
     backgroundColor: "#f5f5f5",
     padding: "34px 55px",
     borderRadius: "20px"
@@ -53,7 +52,7 @@ const App = () => {
         handleClick={e => {
           console.log(e);
         }}
-        messageType={"AUTOMATED"}
+        messageType={"USER_GENERATED"}
         actions={[
           { name: "Accept", actionUrl: "/yes" },
           { name: "Ask more", actionUrl: "/no" },
