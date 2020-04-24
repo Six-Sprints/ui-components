@@ -77,9 +77,8 @@ const ChatBubble = ({
           </Box>
           <Box display="flex" flexWrap="wrap" justifyContent="center" my="1rem">
             {actionArr.map((item, index) => (
-              <Box m="1rem">
+              <Box key={index} m="1rem">
                 <Button
-                  key={index}
                   onClick={handleClick.bind(this, item.actionUrl)}
                   disableElevation
                   variant={index === 0 ? "contained" : "outlined"}
