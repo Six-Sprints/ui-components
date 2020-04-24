@@ -20,17 +20,14 @@ const useStyles = makeStyles(theme => ({
     padding: "0.5rem",
     color: theme.palette.common.black,
     font: "10px",
-    // backgroundColor: theme.palette.chatBg
-    backgroundColor: "#E6E6E6"
+    backgroundColor: theme.palette.chatBg
   },
 
   textBubble: {
     maxWidth: "70%",
-    border: `1px solid ${theme.palette.primary.main}`,
     borderRadius: "1rem",
     padding: theme.spacing(3),
-    color: theme.palette.primary.main
-    // backgroundColor: theme.palette.primary.main
+    backgroundColor: "#F6F7FC"
   },
 
   textBubbleRightBottom: {
@@ -62,7 +59,6 @@ const ChatBubble = ({
   text
 }) => {
   const classes = useStyles();
-  const dateTime = time.split(" ");
 
   const renderAvatar = user => {
     return (
