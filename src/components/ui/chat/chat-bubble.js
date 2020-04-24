@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Avatar, makeStyles, Button } from "@material-ui/core";
+import {
+  Box,
+  Typography,
+  Avatar,
+  makeStyles,
+  Button,
+  IconButton
+} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   roundBorder: {
@@ -13,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     padding: "0.5rem",
     color: theme.palette.common.black,
     font: "10px",
-    backgroundColor: theme.palette.chatBg
+    // backgroundColor: theme.palette.chatBg
+    backgroundColor: "#E6E6E6"
   },
 
   textBubble: {
@@ -54,6 +62,7 @@ const ChatBubble = ({
   text
 }) => {
   const classes = useStyles();
+  const dateTime = time.split(" ");
 
   const renderAvatar = user => {
     return (
@@ -67,7 +76,7 @@ const ChatBubble = ({
     return (
       <Box display="flex" justifyContent="center" my="1rem">
         <Box className={classes.textBubble}>
-          <Box mb="1rem">
+          <Box m="1rem" textAlign="center">
             <Typography variant="subtitle2">{text}</Typography>
           </Box>
           <Box display="flex" flexWrap="wrap" justifyContent="center" my="1rem">
@@ -90,38 +99,57 @@ const ChatBubble = ({
     );
   };
 
+  const renderDownloadIcon = () => {
+    return (
+      <Box alignSelf="center">
+        <a href={img} download>
+          <IconButton size="medium">
+            <img
+              src={"https://storage.googleapis.com/eclinic_assets/download.svg"}
+              alt="download-icon"
+            />
+          </IconButton>
+        </a>
+      </Box>
+    );
+  };
+
   const renderTextBubble = () => {
     return (
-      <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
-        {left ? renderAvatar(user, sameUser) : null}
+      <div>
+        <Box display="flex" justifyContent={left ? "flex-start" : "flex-end"}>
+          {left ? renderAvatar(user, sameUser) : null}
 
-        {!left && (
-          <Box mr={2} alignSelf="flex-end">
-            <Typography variant="caption">{time}</Typography>
+          {!left && img && renderDownloadIcon()}
+          <Box
+            className={
+              left ? classes.textBubbleLeftTop : classes.textBubbleRightBottom
+            }
+          >
+            {text && <Typography variant="subtitle2">{text}</Typography>}
+
+            {img && (
+              <img
+                className={classes.img}
+                width="100%"
+                alt="chat-img"
+                src={img}
+              />
+            )}
           </Box>
-        )}
-        <Box
-          className={
-            left ? classes.textBubbleLeftTop : classes.textBubbleRightBottom
-          }
-        >
-          {text && <Typography variant="subtitle2">{text}</Typography>}
-          {img && (
-            <img
-              className={classes.img}
-              width="100%"
-              alt="chat-img"
-              src={img}
-            />
-          )}
+
+          {left && img && renderDownloadIcon()}
         </Box>
-
-        {left && (
-          <Box ml={2} alignSelf="flex-end">
+        {
+          <Box
+            ml="3.5rem"
+            display="flex"
+            justifyContent={left ? "flex-start" : "flex-end"}
+          >
             <Typography variant="caption">{time}</Typography>
           </Box>
-        )}
-      </Box>
+        }
+      </div>
     );
   };
 

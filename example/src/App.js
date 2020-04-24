@@ -52,7 +52,24 @@ const App = () => {
         handleClick={e => {
           console.log(e);
         }}
+        // img={"https://material-ui.com/static/images/grid-list/breakfast.jpg"}
         messageType={"USER_GENERATED"}
+        // actions={[
+        //   { name: "Accept", actionUrl: "/yes" },
+        //   { name: "Ask more", actionUrl: "/no" },
+        //   { name: "Ask more", actionUrl: "/no" },
+        //   { name: "Ask more", actionUrl: "/no" }
+        // ]}
+        text="Has the question been answered by the doctor ?"
+        time="4/24/20 11:32 AM"
+      />
+      <ChatBubble
+        handleClick={e => {
+          console.log(e);
+        }}
+        left
+        // img={"https://material-ui.com/static/images/grid-list/breakfast.jpg"}
+        messageType={"AUTOMATED"}
         actions={[
           { name: "Accept", actionUrl: "/yes" },
           { name: "Ask more", actionUrl: "/no" },
@@ -60,7 +77,23 @@ const App = () => {
           { name: "Ask more", actionUrl: "/no" }
         ]}
         text="Has the question been answered by the doctor ?"
-        time="10:00 am"
+        time="4/24/20 11:32 AM"
+      />
+      <ChatBubble
+        handleClick={e => {
+          console.log(e);
+        }}
+        left
+        img={"https://material-ui.com/static/images/grid-list/breakfast.jpg"}
+        messageType={"USER_GENERATED"}
+        // actions={[
+        //   { name: "Accept", actionUrl: "/yes" },
+        //   { name: "Ask more", actionUrl: "/no" },
+        //   { name: "Ask more", actionUrl: "/no" },
+        //   { name: "Ask more", actionUrl: "/no" }
+        // ]}
+        // text="Has "
+        time="4/24/20 11:32 AM"
       />
     </div>
   );
