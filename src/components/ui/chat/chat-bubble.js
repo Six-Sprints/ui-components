@@ -56,7 +56,8 @@ const ChatBubble = ({
   sameUser,
   user,
   left,
-  text
+  text,
+  key
 }) => {
   const classes = useStyles();
 
@@ -70,7 +71,7 @@ const ChatBubble = ({
 
   const renderTextActions = (actionArr, text) => {
     return (
-      <Box display="flex" justifyContent="center" my="1rem">
+      <Box key={key} display="flex" justifyContent="center" my="1rem">
         <Box className={classes.textBubble}>
           <Box m="1rem" textAlign="center">
             <Typography variant="subtitle2">{text}</Typography>
