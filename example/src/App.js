@@ -56,7 +56,9 @@ const App = () => {
         messageType={"AUTOMATED"}
         actions={[
           { name: "Accept", actionUrl: "/yes" },
-          { name: "Ask more related questions", actionUrl: "/no" }
+          { name: "Ask more", actionUrl: "/no" },
+          { name: "Ask more", actionUrl: "/no" },
+          { name: "Ask more", actionUrl: "/no" }
         ]}
         text="Has the question been answered by the doctor ?"
         time="10:00 am"
