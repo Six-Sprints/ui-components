@@ -22,27 +22,30 @@ const ListItem = ({
   text,
   time,
   itemStyle,
-  timeStyle
+  timeStyle,
+  nameVariant = "h6",
+  textVariant = "subtitle2",
+  timeVariant = "caption"
 }) => {
   const classes = useStyles();
   return (
     <CardActionArea onClick={handleClick} className={itemStyle}>
       <Box my={2} mx={1} display="flex" alignItems="center">
-        <Avatar alt="avatar-image" src={image}>
+        <Avatar alt="avatar-image" src={image} style={{ marginRight: 8 }}>
           {name.charAt(0)}
         </Avatar>
 
-        <Box width={"68%"} mx={2}>
-          <Typography className={classes.ellipsis} variant="h6">
+        <Box width={"60%"} mx={2}>
+          <Typography className={classes.ellipsis} variant={nameVariant}>
             {name}
           </Typography>
-          <Typography className={classes.ellipsis} variant="subtitle2">
+          <Typography className={classes.ellipsis} variant={textVariant}>
             {text}
           </Typography>
         </Box>
 
-        <Box className={timeStyle} mb={3} width={"15%"}>
-          <Typography variant="caption">{time}</Typography>
+        <Box className={timeStyle} mb={3}>
+          <Typography variant={timeVariant}>{time}</Typography>
         </Box>
       </Box>
     </CardActionArea>
