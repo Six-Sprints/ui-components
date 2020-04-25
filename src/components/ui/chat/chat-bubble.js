@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     borderTopLeftRadius: 0,
     padding: "0.5rem",
     color: theme.palette.common.black,
-    font: "10px",
+    font: "12px",
     backgroundColor: theme.palette.chatBg
   },
 
@@ -43,7 +43,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main
   },
   img: {
-    objectFit: "cover"
+    objectFit: "contain",
+    maxWidth: 150,
+    maxHeight: 150
   }
 }));
 
@@ -97,7 +99,7 @@ const ChatBubble = ({
   const renderDownloadIcon = () => {
     return (
       <Box alignSelf="center">
-        <a href={img} download>
+        <a href={`${img}&download=true`}>
           <IconButton size="medium">
             <img
               src={"https://storage.googleapis.com/eclinic_assets/download.svg"}
