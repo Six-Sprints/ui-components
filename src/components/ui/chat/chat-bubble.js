@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     borderBottomRightRadius: 0,
     padding: "0.5rem",
     color: theme.palette.primary.contrastText,
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.primary.main
   },
 
   bg: {
@@ -76,7 +76,7 @@ const ChatBubble = ({
     return (
       <Box display="flex" justifyContent="center" my="1rem">
         <Box className={classes.textBubble}>
-          <Box m="1rem" textAlign="center">
+          <Box textAlign="center">
             <Typography variant={textVariant}>{text}</Typography>
           </Box>
           {!hideActions && (
@@ -84,15 +84,16 @@ const ChatBubble = ({
               display="flex"
               flexWrap="wrap"
               justifyContent="center"
-              my="1rem"
+              mt="1rem"
             >
               {actionArr.map((item, index) => (
-                <Box key={index} m="1rem">
+                <Box key={index} mr={2}>
                   <Button
                     onClick={handleClick.bind(this, item.actionUrl)}
                     disableElevation
                     variant={index === 0 ? "contained" : "outlined"}
                     color="primary"
+                    size="small"
                   >
                     {item.name}
                   </Button>
