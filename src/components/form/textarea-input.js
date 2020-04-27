@@ -1,6 +1,6 @@
 import React from "react";
 import { asField } from "informed";
-import { TextareaAutosize } from "@material-ui/core";
+import { TextareaAutosize, FormHelperText } from "@material-ui/core";
 
 const TextAreaInput = asField(({ fieldState, fieldApi, ...props }) => {
   const {
@@ -66,16 +66,7 @@ const TextAreaInput = asField(({ fieldState, fieldApi, ...props }) => {
           }
         }}
       />
-      {touched && error && (
-        <span
-          onClick={() => {
-            ref.focus();
-          }}
-          className="no-fill-warning"
-        >
-          {error}
-        </span>
-      )}
+      <FormHelperText variant="standard">{error}</FormHelperText>
     </div>
   );
 });

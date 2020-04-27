@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
   formControl: {
-    minWidth: 210
+    minWidth: 205
   },
   selectEmpty: {
     marginTop: theme.spacing(1)
@@ -75,7 +75,7 @@ const SelectInput = asField(({ fieldState, fieldApi, ...props }) => {
             );
           })}
         </Select>
-        {touched && error && <FormHelperText>{error}</FormHelperText>}
+        <FormHelperText variant="standard">{error}</FormHelperText>
       </FormControl>
     </div>
   );

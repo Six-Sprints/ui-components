@@ -7,6 +7,7 @@ import {
   Button,
   IconButton
 } from "@material-ui/core";
+import Linkify from "react-linkify";
 
 const useStyles = makeStyles(theme => ({
   roundBorder: {
@@ -128,6 +129,12 @@ const ChatBubble = ({
     );
   };
 
+  const linkDecorator = (href, text, key) => (
+    <a href={href} key={key} target="_blank">
+      {text}
+    </a>
+  );
+
   const renderTextBubble = () => {
     return (
       <div>
@@ -140,7 +147,11 @@ const ChatBubble = ({
               left ? classes.textBubbleLeftTop : classes.textBubbleRightBottom
             }
           >
-            {text && <Typography variant={textVariant}>{text}</Typography>}
+            {text && (
+              <Linkify componentDecorator={linkDecorator}>
+                <Typography variant={textVariant}>{text}</Typography>
+              </Linkify>
+            )}
 
             {img && (
               <img

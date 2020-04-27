@@ -1,6 +1,21 @@
 import React from "react";
-import { ChatBubble } from "ui-components";
+import {
+  ChatBubble,
+  SelectInput,
+  TextInput,
+  TextAreaInput,
+  CustomDatePicker
+} from "ui-components";
 import { makeStyles, Link, Paper, Box, Button } from "@material-ui/core";
+import { Form } from "informed";
+
+export function isRequired(value) {
+  return value === null ||
+    value === undefined ||
+    ("" + value).trim().length <= 0
+    ? "This field is required"
+    : undefined;
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,7 +62,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ width: "500px" }}>
+    <div style={{ width: "1200px" }}>
       <ChatBubble
         handleClick={e => {
           console.log(e);
@@ -60,7 +75,7 @@ const App = () => {
         //   { name: "Ask more", actionUrl: "/no" },
         //   { name: "Ask more", actionUrl: "/no" }
         // ]}
-        text="Has the question been answered by the doctor ?"
+        text="Click here http://jyoti.admin.ec.dev.sixsprintscloud.com/"
         time="4/24/20 11:32 AM"
       />
       <ChatBubble
@@ -93,6 +108,68 @@ const App = () => {
         // text="Has "
         time="4/24/20 11:32 AM"
       />
+      {/* <Form onSubmit={handleSubmit}>
+        <Box
+          display="flex"
+          flexDirection="column
+          "
+          justifyContent="space-around"
+          m={2}
+        >
+          <Box mb="0.5rem">
+            <TextInput
+              required
+              field="name"
+              type="text"
+              label="Patient Name"
+              validateOnBlur
+              validateOnChange
+            />
+          </Box>
+
+          <Box mb="0.5rem">
+            <TextInput
+              required
+              field="mobileNumber"
+              type="text"
+              label="Patient Number"
+              validateOnBlur
+              validateOnChange
+            />
+          </Box>
+
+          <CustomDatePicker
+            validate={isRequired}
+            containerClassName={"mr"}
+            openTo="year"
+            inputVariant="outlined"
+            field="dob"
+            label=" DOB"
+            validateOnBlur
+            validateOnChange
+          />
+
+          <SelectInput
+            containerClassName={"mr"}
+            options={["MALE"]}
+            field="gender"
+            validate={isRequired}
+            placeholder="Gender"
+            label="Gender"
+            validateOnBlur
+            validateOnChange
+          />
+          <TextAreaInput
+            style={{ width: "200px" }}
+            label="Type here"
+            field="message"
+            validate={isRequired}
+          />
+        </Box>
+        <Button type="submit" variant="contained" color="primary">
+          Save
+        </Button>
+      </Form> */}
     </div>
   );
 };

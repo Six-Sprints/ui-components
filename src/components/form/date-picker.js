@@ -37,7 +37,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
               setValue(e.valueOf());
             }}
           />
-          {touched && error && <FormHelperText>{error}</FormHelperText>}
+          <FormHelperText>{error}</FormHelperText>
         </div>
       </MuiPickersUtilsProvider>
     </div>
