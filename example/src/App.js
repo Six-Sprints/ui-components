@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  ListItem,
   ChatBubble,
   SelectInput,
   TextInput,
@@ -62,8 +63,16 @@ const App = () => {
   };
 
   return (
-    <div style={{ width: "1200px" }}>
-      <ChatBubble
+    <div style={{ width: "400px" }}>
+      <ListItem
+        handleClick={() => {}}
+        name={"Deepak Paul"}
+        mobileNumber="+917005612488"
+        text={"Some text"}
+        time={"12:30"}
+        nameVariant="subtitle1"
+      />
+      {/* <ChatBubble
         handleClick={e => {
           console.log(e);
         }}
@@ -107,7 +116,7 @@ const App = () => {
         // ]}
         // text="Has "
         time="4/24/20 11:32 AM"
-      />
+      /> */}
       {/* <Form onSubmit={handleSubmit}>
         <Box
           display="flex"
