@@ -44,17 +44,16 @@ const SearchInput = asField(({ ...props }) => {
     onSearchSubmit,
     icon,
     button,
-    allowEmpty
+    reset
   } = props;
 
   const formApi = useRef();
 
   const handleSubmit = val => {
-    if (!allowEmpty) {
-      if (!val.search) return;
-    }
     onSearchSubmit(val);
-    formApi.current.reset();
+    if (reset) {
+      formApi.current.reset();
+    }
   };
 
   const classes = useStyles();
