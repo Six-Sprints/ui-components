@@ -24,6 +24,8 @@ const ListItem = ({
   itemStyle,
   timeStyle,
   nameVariant = "h6",
+  mobileNumber,
+  mobileNumberVariant = "subtitle2",
   textVariant = "subtitle2",
   timeVariant = "caption"
 }) => {
@@ -38,6 +40,12 @@ const ListItem = ({
         <Box width={"60%"} mx={2}>
           <Typography className={classes.ellipsis} variant={nameVariant}>
             {name}
+          </Typography>
+          <Typography
+            className={classes.ellipsis}
+            variant={mobileNumberVariant}
+          >
+            {mobileNumber}
           </Typography>
           <Typography className={classes.ellipsis} variant={textVariant}>
             {text}
