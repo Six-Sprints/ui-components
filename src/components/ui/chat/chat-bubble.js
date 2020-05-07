@@ -154,12 +154,14 @@ const ChatBubble = ({
             )}
 
             {img && (
-              <img
-                className={classes.img}
-                width="100%"
-                alt="chat-img"
-                src={img}
-              />
+              <a href={img} target="_blank">
+                <img
+                  className={classes.img}
+                  width="100%"
+                  alt="chat-img"
+                  src={img}
+                />
+              </a>
             )}
           </Box>
 
