@@ -64,15 +64,7 @@ const App = () => {
 
   return (
     <div style={{ width: "400px" }}>
-      <ListItem
-        handleClick={() => {}}
-        name={"Deepak Paul"}
-        mobileNumber="+917005612488"
-        text={"Some text"}
-        time={"12:30"}
-        nameVariant="subtitle1"
-      />
-      {/* <ChatBubble
+      <ChatBubble
         handleClick={e => {
           console.log(e);
         }}
@@ -116,69 +108,7 @@ const App = () => {
         // ]}
         // text="Has "
         time="4/24/20 11:32 AM"
-      /> */}
-      {/* <Form onSubmit={handleSubmit}>
-        <Box
-          display="flex"
-          flexDirection="column
-          "
-          justifyContent="space-around"
-          m={2}
-        >
-          <Box mb="0.5rem">
-            <TextInput
-              required
-              field="name"
-              type="text"
-              label="Patient Name"
-              validateOnBlur
-              validateOnChange
-            />
-          </Box>
-
-          <Box mb="0.5rem">
-            <TextInput
-              required
-              field="mobileNumber"
-              type="text"
-              label="Patient Number"
-              validateOnBlur
-              validateOnChange
-            />
-          </Box>
-
-          <CustomDatePicker
-            validate={isRequired}
-            containerClassName={"mr"}
-            openTo="year"
-            inputVariant="outlined"
-            field="dob"
-            label=" DOB"
-            validateOnBlur
-            validateOnChange
-          />
-
-          <SelectInput
-            containerClassName={"mr"}
-            options={["MALE"]}
-            field="gender"
-            validate={isRequired}
-            placeholder="Gender"
-            label="Gender"
-            validateOnBlur
-            validateOnChange
-          />
-          <TextAreaInput
-            style={{ width: "200px" }}
-            label="Type here"
-            field="message"
-            validate={isRequired}
-          />
-        </Box>
-        <Button type="submit" variant="contained" color="primary">
-          Save
-        </Button>
-      </Form> */}
+      />
     </div>
   );
 };
