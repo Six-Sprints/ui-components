@@ -29,6 +29,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
         <div>
           <DatePicker
             className={`MuiFormControl-marginNormal ${className}`}
+            id="date-picker-dialog"
             {...rest}
             format="DD/MM/YYYY"
             label={label}
