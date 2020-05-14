@@ -23,7 +23,7 @@ const TextAreaInput = asField(({ fieldState, fieldApi, ...props }) => {
   return (
     <div style={{ width: "100%" }}>
       <TextareaAutosize
-        rowsMax={4}
+        // rowsMax={10}
         ref={refer => {
           ref = refer;
           if (forwardedRef) {
