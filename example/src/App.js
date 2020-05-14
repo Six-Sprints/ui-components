@@ -7,7 +7,7 @@ import {
   TextAreaInput,
   CustomDatePicker
 } from "ui-components";
-import { makeStyles, Link, Paper, Box, Button } from "@material-ui/core";
+import { makeStyles, Link, Paper, Box, Button, TextareaAutosize } from "@material-ui/core";
 import { Form } from "informed";
 
 export function isRequired(value) {
@@ -79,7 +79,7 @@ const App = () => {
         text="Click here http://jyoti.admin.ec.dev.sixsprintscloud.com/"
         time="4/24/20 11:32 AM"
       />
-      <ChatBubble
+      {/* <ChatBubble
         handleClick={e => {
           console.log(e);
         }}
@@ -92,7 +92,11 @@ const App = () => {
         ]}
         text="Has the question been answered by the doctor ?"
         time="4/24/20 11:32 AM"
-      />
+      /> */}
+      <TextAreaInput
+        field="hopi"
+        placeholder="Type here"
+      /> />
       <ChatBubble
         handleClick={e => {
           console.log(e);
