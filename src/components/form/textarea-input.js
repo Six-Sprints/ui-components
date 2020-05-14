@@ -36,7 +36,7 @@ const TextAreaInput = asField(({ fieldState, fieldApi, ...props }) => {
         style={{
           width: "100%",
           border: "none",
-          overflow: "hidden",
+          // overflow: "hidden",
           outline: "none"
         }}
         className={styleClass}
