@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ListItem,
   ChatBubble,
   SelectInput,
   TextInput,
   TextAreaInput,
-  CustomDatePicker
+  CustomDatePicker,
+  OtpInput
 } from "ui-components";
 import { makeStyles, Link, Paper, Box, Button, TextareaAutosize } from "@material-ui/core";
 import { Form } from "informed";
@@ -93,10 +94,36 @@ const App = () => {
         text="Has the question been answered by the doctor ?"
         time="4/24/20 11:32 AM"
       /> */}
+      <OtpInput
+        numInputs={5}
+        inputStyle={{
+          width: "2.8rem",
+          height: "2.8rem",
+          borderRadius: "5px",
+          border: "1px solid #6D6d6d",
+          margin: "auto 10px",
+          outline: "none",
+          fontSize: "16px",
+          alignItems: "center",
+        }}
+        field="otp"
+        separator={
+          <span style={{ fontSize: "16px", color: "#6D6d6d" }}>+</span>
+        }
+      />
       <TextAreaInput
         field="hopi"
         placeholder="Type here"
       /> />
+      <TextInput
+        fullWidth
+        required
+        field="mobileNumber"
+        type="tel"
+        label="Mobile Number"
+        validateOnBlur
+        validateOnChange
+      />
       <ChatBubble
         handleClick={e => {
           console.log(e);

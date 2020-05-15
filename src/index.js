@@ -14,6 +14,7 @@ import ListItem from "./components/ui/chat/list-item";
 import Copyright from "./components/ui/other/copyright";
 import NmBox from "./components/ui/other/nm-box";
 import SidebarContext from "./context/sidebar";
+import OtpInput from "./components/form/otp-input";
 
 export {
   LoginForm,
@@ -27,6 +28,7 @@ export {
   TextInput,
   TimePicker,
   TextAreaInput,
+  OtpInput,
   ChatBubble,
   ListItem,
   Copyright,
