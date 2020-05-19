@@ -119,8 +119,9 @@ const App = () => {
         fullWidth
         required
         field="mobileNumber"
-        type="tel"
+        type="number"
         label="Mobile Number"
+        InputProps={{ inputProps: { min: 0 } }}
         validateOnBlur
         validateOnChange
       />

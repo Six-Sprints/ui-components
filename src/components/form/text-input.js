@@ -36,12 +36,15 @@ const TextInput = asField(({ fieldState, fieldApi, ...props }) => {
           variant={variant || "outlined"}
           label={label}
           helperText={error}
-          value={value || ""}
+          // value={value || '0'}
           margin="normal"
           type={type}
           {...rest}
           onChange={e => {
             let val = e.target.value;
+            if (type === 'number' && val === '') {
+              val = 0;
+            }
             if (format) {
               val = format(val);
             }
