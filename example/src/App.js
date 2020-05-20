@@ -3,8 +3,9 @@ import {
   ListItem,
   ChatBubble,
   SelectInput,
-  TextInput,
+  InputNumber,
   TextAreaInput,
+  TextInput,
   CustomDatePicker,
   OtpInput
 } from "ui-components";

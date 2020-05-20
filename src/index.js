@@ -15,6 +15,7 @@ import Copyright from "./components/ui/other/copyright";
 import NmBox from "./components/ui/other/nm-box";
 import SidebarContext from "./context/sidebar";
 import OtpInput from "./components/form/otp-input";
+import InputNumber from "./components/form/input-number";
 
 export {
   LoginForm,
@@ -33,5 +34,6 @@ export {
   ListItem,
   Copyright,
   NmBox,
+  InputNumber,
   SidebarContext
 };

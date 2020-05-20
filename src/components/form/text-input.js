@@ -36,7 +36,7 @@ const TextInput = asField(({ fieldState, fieldApi, ...props }) => {
           variant={variant || "outlined"}
           label={label}
           helperText={error}
-          value={value}
+          value={value || ''}
           margin="normal"
           type={type}
           {...rest}
