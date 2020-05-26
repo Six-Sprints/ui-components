@@ -16,6 +16,7 @@ import NmBox from "./components/ui/other/nm-box";
 import SidebarContext from "./context/sidebar";
 import OtpInput from "./components/form/otp-input";
 import InputNumber from "./components/form/input-number";
+import CustomDateInput from "./components/form/keyboard-date-picker";
 
 export {
   LoginForm,
@@ -35,5 +36,6 @@ export {
   Copyright,
   NmBox,
   InputNumber,
+  CustomDateInput,
   SidebarContext
 };
