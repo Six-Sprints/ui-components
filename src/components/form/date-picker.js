@@ -35,7 +35,10 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
             label={label}
             value={value}
             onChange={e => {
-              setValue(e.valueOf());
+              if (onChange) {
+                onChange(e && e.valueOf());
+              }
+              setValue(e && e.valueOf());
             }}
           />
           <FormHelperText>{error}</FormHelperText>

@@ -7,9 +7,17 @@ import {
   TextInput,
   ListItem,
   CustomDatePicker,
+  CustomDateInput,
   OtpInput
 } from "ui-components";
-import { makeStyles, Link, Paper, Box, Button, TextareaAutosize } from "@material-ui/core";
+import {
+  makeStyles,
+  Link,
+  Paper,
+  Box,
+  Button,
+  TextareaAutosize
+} from "@material-ui/core";
 import { Form } from "informed";
 
 export function isRequired(value) {
@@ -61,11 +69,15 @@ const useStyles = makeStyles(theme => ({
 const App = () => {
   const classes = useStyles();
   const handleSubmit = val => {
+    if (val) {
+      console.log(val, "TRUE");
+    }
     console.log(val);
   };
 
   return (
     <div style={{ width: "400px" }}>
+      <CustomDateInput onChange={handleSubmit} />
       <ChatBubble
         handleClick={e => {
           console.log(e);
@@ -105,17 +117,14 @@ const App = () => {
           margin: "auto 10px",
           outline: "none",
           fontSize: "16px",
-          alignItems: "center",
+          alignItems: "center"
         }}
         field="otp"
         separator={
           <span style={{ fontSize: "16px", color: "#6D6d6d" }}>+</span>
         }
       />
-      <TextAreaInput
-        field="hopi"
-        placeholder="Type here"
-      /> />
+      <TextAreaInput field="hopi" placeholder="Type here" /> />
       <TextInput
         fullWidth
         required
