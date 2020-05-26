@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  ListItem,
   ChatBubble,
   SelectInput,
   InputNumber,
   TextAreaInput,
   TextInput,
+  ListItem,
   CustomDatePicker,
   OtpInput
 } from "ui-components";
@@ -141,6 +141,12 @@ const App = () => {
         // ]}
         // text="Has "
         time="4/24/20 11:32 AM"
+      />
+      <ListItem
+        name={"hi"}
+        text={"hello"}
+        nameVariant="subtitle1"
+        status={"ACTIVE"}
       />
     </div>
   );
