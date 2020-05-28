@@ -1,10 +1,13 @@
 import React from "react";
 import { asField } from "informed";
-import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker
+} from "@material-ui/pickers";
 import MomentUtils from "@date-io/moment";
 import { FormHelperText } from "@material-ui/core";
 
-const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
+const CustomDateInput = asField(({ fieldState, fieldApi, ...props }) => {
   const {
     required,
     onChange,
@@ -27,7 +30,7 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
     <div className={containerClassName}>
       <MuiPickersUtilsProvider utils={MomentUtils}>
         <div>
-          <DatePicker
+          <KeyboardDatePicker
             className={`MuiFormControl-marginNormal ${className}`}
             id="date-picker-dialog"
             {...rest}
@@ -48,4 +51,4 @@ const CustomDatePicker = asField(({ fieldState, fieldApi, ...props }) => {
   );
 });
 
-export default CustomDatePicker;
+export default CustomDateInput;
