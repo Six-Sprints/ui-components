@@ -63,6 +63,7 @@ const App = () => {
   const handleSubmit = val => {
     console.log(val);
   };
+  const status = "ACTIVE";
 
   return (
     <div style={{ width: "400px" }}>
@@ -146,7 +147,13 @@ const App = () => {
         name={"hi"}
         text={"hello"}
         nameVariant="subtitle1"
-        status={"ACTIVE"}
+        status={status === "ACTIVE"}
+      />
+      <ListItem
+        name={"hi"}
+        text={"hello"}
+        nameVariant="subtitle1"
+        status={status !== "ACTIVE"}
       />
     </div>
   );

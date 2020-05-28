@@ -47,23 +47,26 @@ const ListItem = ({
   timeVariant = "caption"
 }) => {
   const classes = useStyles();
+  // <StyledBadge
+  //   overlap="circle"
+  //   anchorOrigin={{
+  //     vertical: 'bottom',
+  //     horizontal: 'right',
+  //   }}
+  //   variant="dot"
+  // >
+  //   <Avatar alt="avatar-image" src={image} style={{ color: 'black' }}>
+  //     {name.charAt(0)}
+  //   </Avatar>
+  // </StyledBadge>
   return (
     <CardActionArea onClick={handleClick} className={itemStyle}>
       <Box my={2} mx={1} display="flex" alignItems="center">
         <div className={classes.root}>
-          {status === 'ACTIVE' ?
-            <StyledBadge
-              overlap="circle"
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right',
-              }}
-              variant="dot"
-            >
-              <Avatar alt="avatar-image" src={image}>
-                {name.charAt(0)}
-              </Avatar>
-            </StyledBadge> :
+          {status ?
+            <Avatar alt="avatar-image" src={image} style={{ color: 'black', marginRight: 8 }}>
+              {name.charAt(0)}
+            </Avatar> :
             <Avatar alt="avatar-image" src={image} style={{ marginRight: 8 }}>
               {name.charAt(0)}
             </Avatar>}
