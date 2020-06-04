@@ -157,13 +157,16 @@ const App = () => {
         text={"hello"}
         nameVariant="subtitle1"
         status={status === "ACTIVE"}
-        unseenMsgStatus
+        time="11:32 AM"
+        unseenMsgStatus={true}
       />
       <ListItem
         name={"hi"}
         text={"hello"}
         nameVariant="subtitle1"
         status={status !== "ACTIVE"}
+        time="11:32 AM"
+        unseenMsgStatus={false}
       />
     </div>
   );

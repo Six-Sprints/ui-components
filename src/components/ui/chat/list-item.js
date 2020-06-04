@@ -30,8 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   unseenStatusStyle: {
-    color: theme.palette.primary.main,
-    alignSelf: 'center'
+    color: theme.palette.primary.main
   }
 }));
 
@@ -65,7 +64,7 @@ const ListItem = ({
   //   </Avatar>
   // </StyledBadge>
   return (
-    <CardActionArea onClick={handleClick} className={itemStyle}>
+    <CardActionArea onClick={handleClick} className={itemStyle} style={{ backgroundColor: 'grey' }}>
       <Box my={2} mx={1} display="flex" alignItems="center">
         <div className={classes.root}>
           {status ?
@@ -92,12 +91,9 @@ const ListItem = ({
           </Typography>
         </Box>
 
-        <Box className={timeStyle} mb={3}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'space-between' }}>
-            <Typography variant={timeVariant}>{time}</Typography>
-            {unseenMsgStatus && <Typography variant={'h5'} className={classes.unseenStatusStyle}> &#8226;</Typography>}
-            <Typography variant={timeVariant}>&nbsp;</Typography>
-          </div>
+        <Box display="flex" flexDirection="column" justifyContent="flex-start">
+          <Typography variant={timeVariant}>{time}</Typography>
+          {unseenMsgStatus && <Typography variant={'h4'} className={classes.unseenStatusStyle}> &#8226;</Typography>}
         </Box>
       </Box>
     </CardActionArea>
