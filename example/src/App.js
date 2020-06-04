@@ -157,6 +157,7 @@ const App = () => {
         text={"hello"}
         nameVariant="subtitle1"
         status={status === "ACTIVE"}
+        unseenMsgStatus
       />
       <ListItem
         name={"hi"}

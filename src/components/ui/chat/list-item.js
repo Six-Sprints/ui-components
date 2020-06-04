@@ -29,6 +29,10 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(1),
     },
   },
+  unseenStatusStyle: {
+    color: theme.palette.primary.main,
+    alignSelf: 'center'
+  }
 }));
 
 const ListItem = ({
@@ -44,7 +48,8 @@ const ListItem = ({
   mobileNumber,
   mobileNumberVariant = "subtitle2",
   textVariant = "subtitle2",
-  timeVariant = "caption"
+  timeVariant = "caption",
+  unseenMsgStatus
 }) => {
   const classes = useStyles();
   // <StyledBadge
@@ -88,7 +93,11 @@ const ListItem = ({
         </Box>
 
         <Box className={timeStyle} mb={3}>
-          <Typography variant={timeVariant}>{time}</Typography>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'space-between' }}>
+            <Typography variant={timeVariant}>{time}</Typography>
+            {unseenMsgStatus && <Typography variant={'h5'} className={classes.unseenStatusStyle}> &#8226;</Typography>}
+            <Typography variant={timeVariant}>&nbsp;</Typography>
+          </div>
         </Box>
       </Box>
     </CardActionArea>
