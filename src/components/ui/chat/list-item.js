@@ -8,6 +8,7 @@ import {
   makeStyles,
   withStyles,
 } from "@material-ui/core";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -30,7 +31,14 @@ const useStyles = makeStyles(theme => ({
     },
   },
   unseenStatusStyle: {
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    alignSelf: 'flex-end',
+    backgroundColor: 'green'
+  },
+  timeStatusStyle: {
+    backgroundColor: 'grey',
+    display: 'flex',
+    flexDirection: 'column'
   }
 }));
 
@@ -64,7 +72,7 @@ const ListItem = ({
   //   </Avatar>
   // </StyledBadge>
   return (
-    <CardActionArea onClick={handleClick} className={itemStyle} style={{ backgroundColor: 'grey' }}>
+    <CardActionArea onClick={handleClick} className={itemStyle}>
       <Box my={2} mx={1} display="flex" alignItems="center">
         <div className={classes.root}>
           {status ?
@@ -91,9 +99,9 @@ const ListItem = ({
           </Typography>
         </Box>
 
-        <Box display="flex" flexDirection="column" justifyContent="flex-start">
-          <Typography variant={timeVariant}>{time}</Typography>
-          {unseenMsgStatus && <Typography variant={'h4'} className={classes.unseenStatusStyle}> &#8226;</Typography>}
+        <Box display='flex' flexDirection="column" justifyContent="flex-start">
+          <Typography variant={timeVariant} >{time}</Typography>
+          {unseenMsgStatus ? <FiberManualRecordIcon color="primary" /> : <div>{''}</div>}
         </Box>
       </Box>
     </CardActionArea>
